@@ -1,0 +1,8 @@
+[submodule "platforms/raspberrypi/Raspberry-Pi-Multicore"]
+	path = platforms/raspberrypi/Raspberry-Pi-Multicore
+	url = git@github.com:cassebas/Raspberry-Pi-Multicore.git
+	branch = experiment
+[submodule "platforms/raspberrypi/circle"]
+	path = platforms/raspberrypi/circle
+	url = git@github.com:cassebas/circle.git
+	branch = experiment
