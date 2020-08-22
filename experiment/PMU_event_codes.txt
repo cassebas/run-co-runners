@@ -1,0 +1,11 @@
+0: L1 Data cache refill
+1: L1 Data cache access
+2: Mis-/not predicted branch speculatively exec.
+3: Predictable branch speculatively executed
+4: Data memory access
+5: L1 Data cache Write-back
+6: L2 Data cache access
+7: L2 Data cache refill
+8: L2 Data cache Write-back
+9: Bus access
+
