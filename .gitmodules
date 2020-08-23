@@ -6,3 +6,6 @@
 	path = platforms/raspberrypi/circle
 	url = git@github.com:cassebas/circle.git
 	branch = experiment
+[submodule "platforms/raspberrypi/Raspberry-Pi-Networkboot"]
+	path = platforms/raspberrypi/Raspberry-Pi-Networkboot
+	url = git@github.com:cassebas/Raspberry-Pi-Networkboot.git
