@@ -24,56 +24,51 @@ click_log.basic_config(logger)
 
 class Fields(Enum):
     NUMBER = 1
-    CONFIG_SERIES = 2
-    CONFIG_BENCH = 3
-    DISABLE_CACHE = 4
-    ENABLE_MMU = 5
-    ENABLE_SCREEN = 6
-    NO_CACHE_MGMT = 7
-    SB_DATASIZE = 8
+    PLATFORM = 2
+    RASPBERRYPI = 3
+    CONFIG_SERIES = 4
+    CONFIG_BENCH = 5
+    ENABLE_MMU = 6
+    ENABLE_SCREEN = 7
+    NO_CACHE_MGMT = 8
     EXP_LABEL = 9
     PMU_CORE0 = 10
     PMU_CORE1 = 11
     PMU_CORE2 = 12
     PMU_CORE3 = 13
-    DISP_INPUT = 14
-    BSORT_INPUT = 15
-    MATMULT_INPUT = 16
-    TICK_RATE_HZ = 17
+    INPUTSIZE_CORE0 = 14
+    INPUTSIZE_CORE1 = 15
+    INPUTSIZE_CORE2 = 16
+    INPUTSIZE_CORE3 = 17
+    DELAY_STEP_COUNTDOWN = 18
 
 
 class Compile:
     def __init__(self):
-        self.target_dir = 'xRTOS_MMU_SEMAPHORE'
         self.scriptdir = os.getcwd()
-        self.working_dir = self.scriptdir + '/../' + self.target_dir
-        self.makecleancmd = ['make', 'clean']
-        self.makeinstallcmd = ['make', 'install']
-        self.set_environment()
-        self.set_compilation()
+        self.working_dir = None
 
-    def compile(self):
-        logger.debug('working_dir={}'.format(self.working_dir))
+    def create_benchmark_config(self, benchmark_config_cmd):
+        logger.debug('create_benchmark_config: ' +
+                     'working_dir={}'.format(self.working_dir))
         os.chdir(self.working_dir)
         try:
-            # do make clean to clean up previous makes
-            logger.info('Run make clean')
-            cp = subprocess.run(self.makecleancmd,
-                                check=True,
-                                capture_output=True,
-                                text=True,
-                                env=self.myenv)
-            logger.debug(cp.stdout)
-
             # generate the benchmark_config.h file
-            logger.info('Writing benchmark_config.h')
+            logger.info('Run {}'.format(benchmark_config_cmd))
             with open('benchmark_config.h', 'w') as outfile:
-                subprocess.run(self.makeprepcmd,
+                subprocess.run(benchmark_config_cmd,
                                stdout=outfile)
+        except (CalledProcessError, UnicodeDecodeError):
+            logger.warning('m4 subprocess resulted in an error!')
+        os.chdir(self.scriptdir)
 
+    def make(self, makecmd):
+        logger.debug('make: working_dir={}'.format(self.working_dir))
+        os.chdir(self.working_dir)
+        try:
             # do the actual compilation
-            logger.info('Performing actual compilation')
-            cp = subprocess.run(self.makeinstallcmd,
+            logger.info('Run {}'.format(makecmd))
+            cp = subprocess.run(makecmd,
                                 check=True,
                                 capture_output=True,
                                 text=True,
@@ -82,23 +77,26 @@ class Compile:
             for line in text:
                 logger.debug(line)
         except (CalledProcessError, UnicodeDecodeError):
-            logger.warning('Compilation subprocess resulted ' +
+            logger.warning('Make subprocess resulted ' +
                            'in an error!')
-
         os.chdir(self.scriptdir)
 
-    def set_environment(self):
+    def set_environment(self, raspberrypi):
         self.myenv = dict(os.environ,
                           BENCHMARK_CONFIG='-DBENCHMARK_CONFIG_M4')
+        self.myenv = dict(os.environ,
+                          RASPPI=raspberrypi)
 
-    def set_compilation(self, config_series=None, config_bench=None,
-                        label=None, datasize=None,
-                        pmu_cores=None, no_cache_mgmt=False,
-                        enable_mmu=False, enable_screen=False,
-                        disparity_inputsize=None, bsort_inputsize=None,
-                        matmult_inputsize=None, tick_rate_hz=None):
+    def set_working_dir(self, working_dir):
+        self.working_dir = working_dir
+
+    def get_benchmark_config_cmd(self, platform=None, raspberrypi=None,
+                                 config_series=None, config_bench=None,
+                                 label=None, pmu_cores=None,
+                                 no_cache_mgmt=False, enable_mmu=False,
+                                 enable_screen=False, inputsizes=None,
+                                 delay_step=None):
         arg_m4_list = []
-        arg_make_list = []
         if config_series is not None:
             # The python process that runs m4 cannot handle a string
             # with quotes well, remove leading and trailing quotes.
@@ -129,33 +127,35 @@ class Compile:
             logger.debug('enable_screen={}'.format(enable_screen))
             enable_screen_param = '-Dscreen_enable'
             arg_m4_list.append(enable_screen_param)
-        if disparity_inputsize is not None:
-            logger.debug('disparity_inputsize={}'.format(disparity_inputsize))
-            disparity_inputsize_param = \
-                '-Ddisparity_inputsize={}'.format(disparity_inputsize)
-            arg_m4_list.append(disparity_inputsize_param)
-        if bsort_inputsize is not None:
-            logger.debug('bsort_inputsize={}'.format(bsort_inputsize))
-            bsort_inputsize_param = \
-                '-Dbsort_inputsize={}'.format(bsort_inputsize)
-            arg_m4_list.append(bsort_inputsize_param)
-        if matmult_inputsize is not None:
-            logger.debug('matmult_inputsize={}'.format(matmult_inputsize))
-            matmult_inputsize_param = \
-                '-Dmatmult_inputsize={}'.format(matmult_inputsize)
-            arg_m4_list.append(matmult_inputsize_param)
-        if tick_rate_hz is not None:
-            logger.debug('tick_rate_hz={}'.format(tick_rate_hz))
-            tick_rate_hz_param = '-Dtick_rate_hz={}'.format(tick_rate_hz)
-            arg_m4_list.append(tick_rate_hz_param)
-        if no_cache_mgmt is True:
-            no_cache_mgmt_param = 'NO_CACHE_MGMT=-DNO_CACHE_MGMT'
-            arg_make_list.append(no_cache_mgmt_param)
-        if datasize is not None:
-            logger.debug('datasize={}'.format(datasize))
-            datasize_param = ('SYNBENCH_DATASIZE=' +
-                              '-DSYNBENCH_DATASIZE={}'.format(datasize))
-            arg_make_list.append(datasize_param)
+
+        if inputsizes is not None:
+            # if inputsizes is not None, it must be a tuple of four
+            input_core0, input_core1, input_core2, input_core3 = inputsizes
+            if not pd.isnull(input_core0):
+                input_core0 = re.sub(r'^\'', '', input_core0)
+                input_core0 = re.sub(r'\'$', '', input_core0)
+                input_core0_param = '-Dinputsize_core0={}'.format(input_core0)
+                logger.debug('input_core0={}'.format(input_core0))
+                arg_m4_list.append(input_core0_param)
+            if not pd.isnull(input_core1):
+                input_core1 = re.sub(r'^\'', '', input_core1)
+                input_core1 = re.sub(r'\'$', '', input_core1)
+                input_core1_param = '-Dinputsize_core1={}'.format(input_core1)
+                logger.debug('input_core0={}'.format(input_core0))
+                arg_m4_list.append(input_core1_param)
+            if not pd.isnull(input_core2):
+                input_core2 = re.sub(r'^\'', '', input_core2)
+                input_core2 = re.sub(r'\'$', '', input_core2)
+                input_core2_param = '-Dinputsize_core2={}'.format(input_core2)
+                logger.debug('input_core2={}'.format(input_core2))
+                arg_m4_list.append(input_core2_param)
+            if not pd.isnull(input_core3):
+                input_core3 = re.sub(r'^\'', '', input_core3)
+                input_core3 = re.sub(r'\'$', '', input_core3)
+                input_core3_param = '-Dinputsize_core3={}'.format(input_core3)
+                logger.debug('input_core3={}'.format(input_core3))
+                arg_m4_list.append(input_core3_param)
+
         if pmu_cores is not None:
             # if pmu_cores is not None, it must be a tuple of four
             pmu0, pmu1, pmu2, pmu3 = pmu_cores
@@ -184,14 +184,10 @@ class Compile:
                 logger.debug('pmu3={}'.format(pmu3))
                 arg_m4_list.append(pmu_core3_param)
 
-        self.makeprepcmd = ['m4'] + arg_m4_list + ['benchmark_config.m4']
-        logger.debug('makeprepcmd={}'.format(self.makeprepcmd))
+        benchmark_config_cmd = ['m4'] + arg_m4_list + ['benchmark_config.m4']
+        logger.debug('benchmark_config_cmd={}'.format(benchmark_config_cmd))
 
-        bench_config_m4 = 'BENCHMARK_CONFIG=-DBENCHMARK_CONFIG_M4'
-        arg_make_list.append(bench_config_m4)
-
-        self.makeinstallcmd = ['make'] + arg_make_list + ['install']
-        logger.debug('makeinstallcmd={}'.format(self.makeinstallcmd))
+        return benchmark_config_cmd
 
 
 class SerialThread(Thread):
@@ -388,30 +384,56 @@ class LogProcessor(SerialThread):
 
 flds = {
     Fields.NUMBER: 'experiment number',
+    Fields.PLATFORM: 'platform',
+    Fields.RASPBERRYPI: 'raspberrypi',
     Fields.CONFIG_SERIES: 'benchmark series',
     Fields.CONFIG_BENCH: 'benchmark configuration',
-    Fields.DISABLE_CACHE: 'disable cache',  # not implemented for now
     Fields.ENABLE_MMU: 'enable mmu',
     Fields.ENABLE_SCREEN: 'enable screen',
     Fields.NO_CACHE_MGMT: 'no cache management',
-    Fields.SB_DATASIZE: 'synbench datasize',
     Fields.EXP_LABEL: 'experiment label',
     Fields.PMU_CORE0: 'pmu core 0',
     Fields.PMU_CORE1: 'pmu core 1',
     Fields.PMU_CORE2: 'pmu core 2',
     Fields.PMU_CORE3: 'pmu core 3',
-    Fields.DISP_INPUT: 'disparity inputsize',
-    Fields.BSORT_INPUT: 'bsort inputsize',
-    Fields.MATMULT_INPUT: 'matmult inputsize',
-    Fields.TICK_RATE_HZ: 'tick rate hz',
+    Fields.INPUTSIZE_CORE0: 'input size core0',
+    Fields.INPUTSIZE_CORE1: 'input size core1',
+    Fields.INPUTSIZE_CORE2: 'input size core2',
+    Fields.INPUTSIZE_CORE3: 'input size core3',
+    Fields.DELAY_STEP_COUNTDOWN: 'delay step countdown',
 }
 
 
-def do_experiments(infile, outfile, workdir, tty_reset, tty_logging,
-                   min_observations, begin, count):
+def do_experiments(infile, outfile, workdir_xrtos, workdir_circle,
+                   tty_reset, tty_logging, min_observations, begin, count):
+
+    # Read the excel file, the first row is documentation, it should
+    # not be included in the data frame
+    df = pd.read_excel(infile, skiprows=[0])
+    validity_checks(df)
+
+    # First get the first row in which the platform (xrtos) and raspberrypi are
+    # specified: if platform is circle we must perform an initial compilation in
+    # the main circle directory.
+    platform = df.loc[0, flds[Fields.PLATFORM]]
+    raspberrypi = df.loc[0, flds[Fields.RASPBERRYPI]]
 
     logger.info('Instantiating Compile object.')
     comp = Compile()
+
+    # Prepare the environment variables for the compilation object
+    comp.set_environment(raspberrypi)
+
+    if platform == 'circle':
+        # Circle platofrm needs an initial compilation,
+        # set working dir to platform dir
+        workdir = re.sub(r'/$', '', workdir_circle)
+        comp.set_working_dir(workdir + '/../..')
+        comp.make(['./makeall', 'clean'])
+        comp.make(['./makeall'])
+        comp.set_working_dir(workdir_circle)
+    else:
+        comp.set_working_dir(workdir_xrtos)
 
     logger.info('Instantiating LogProcessor object.')
     log_processor = LogProcessor(tty_logging, outfile)
@@ -420,8 +442,6 @@ def do_experiments(infile, outfile, workdir, tty_reset, tty_logging,
     logger.info('Instantiating Resetter object.')
     resetter = Resetter(tty_reset, log_processor, min_observations)
     resetter.start_thread()
-
-    df = pd.read_excel(infile)
 
     # Convert boolean fields to actual bool type
     df[flds[Fields.NO_CACHE_MGMT]] = df[flds[Fields.NO_CACHE_MGMT]].astype(bool)
@@ -435,35 +455,45 @@ def do_experiments(infile, outfile, workdir, tty_reset, tty_logging,
             # First compile this experiment
             logger.info('Starting a new compilation, ' +
                         'experiment nr is {}.'.format(number))
+
+            # First do a make clean to clean up previous experiment
+            comp.make(['make', 'clean'])
+
             config_series = row[flds[Fields.CONFIG_SERIES]]
             config_bench = row[flds[Fields.CONFIG_BENCH]]
             label = row[flds[Fields.EXP_LABEL]]
             no_cache_mgmt = row[flds[Fields.NO_CACHE_MGMT]]
             enable_mmu = row[flds[Fields.ENABLE_MMU]]
             enable_screen = row[flds[Fields.ENABLE_SCREEN]]
-            datasize = row[flds[Fields.SB_DATASIZE]]
             pmu_cores = (row[flds[Fields.PMU_CORE0]],
                          row[flds[Fields.PMU_CORE1]],
                          row[flds[Fields.PMU_CORE2]],
                          row[flds[Fields.PMU_CORE3]])
-            disparity_inputsize = row[flds[Fields.DISP_INPUT]]
-            bsort_inputsize = row[flds[Fields.BSORT_INPUT]]
-            matmult_inputsize = row[flds[Fields.MATMULT_INPUT]]
-            tick_rate_hz = row[flds[Fields.TICK_RATE_HZ]]
-            comp.set_compilation(config_series=config_series,
-                                 config_bench=config_bench,
-                                 label=label, datasize=datasize,
-                                 pmu_cores=pmu_cores,
-                                 no_cache_mgmt=no_cache_mgmt,
-                                 enable_mmu=enable_mmu,
-                                 enable_screen=enable_screen,
-                                 disparity_inputsize=disparity_inputsize,
-                                 bsort_inputsize=bsort_inputsize,
-                                 matmult_inputsize=matmult_inputsize,
-                                 tick_rate_hz=tick_rate_hz)
-            comp.compile()
+            inputsizes = (row[flds[Fields.INPUTSIZE_CORE0]],
+                          row[flds[Fields.INPUTSIZE_CORE1]],
+                          row[flds[Fields.INPUTSIZE_CORE2]],
+                          row[flds[Fields.INPUTSIZE_CORE3]])
+            delay_step = row[flds[Fields.DELAY_STEP_COUNTDOWN]]
 
+            # Construct the m4 command for creation of benchmark_config.h
+            m4cmd = comp.get_benchmark_config_cmd(config_series=config_series,
+                                                  config_bench=config_bench,
+                                                  label=label,
+                                                  pmu_cores=pmu_cores,
+                                                  no_cache_mgmt=no_cache_mgmt,
+                                                  enable_mmu=enable_mmu,
+                                                  enable_screen=enable_screen,
+                                                  inputsizes=inputsizes,
+                                                  delay_step=delay_step)
+            comp.create_benchmark_config(m4cmd)
+
+            # Now we can do the actual compilation and installation
+            if platform == 'circle' and raspberrypi == 3:
+                comp.make(['make', 'install3'])
+            else:
+                comp.make(['make', 'install'])
             logger.info('Compilation done.')
+
             while True:
                 if resetter.get_next_experiment() is True:
                     # Oh! The resetter has reset the Pi. We should move on
@@ -491,6 +521,11 @@ def do_experiments(infile, outfile, workdir, tty_reset, tty_logging,
     logger.info('Stopping.. bye now!')
 
 
+def validity_checks(dataframe):
+    # tbd
+    return
+
+
 @click.command()
 @click.option('--input-file',
               required=True,
@@ -498,8 +533,11 @@ def do_experiments(infile, outfile, workdir, tty_reset, tty_logging,
 @click.option('--output-file',
               required=True,
               help='Path and filename of the log file for output.')
-@click.option('--working-directory',
-              default='../xRTOS_MMU_SEMAPHORE',
+@click.option('--working-directory-xrtos',
+              default='../platforms/raspberrypi/Raspberry-Pi-Multicore/xRTOS_MMU_SEMAPHORE',
+              help='Path of the working directory.')
+@click.option('--working-directory-circle',
+              default='../platforms/raspberrypi/circle/app/corunners',
               help='Path of the working directory.')
 @click.option('--tty-reset',
               default='/dev/ttyUSB0',
@@ -517,7 +555,8 @@ def do_experiments(infile, outfile, workdir, tty_reset, tty_logging,
               default=1,
               help='Number of experiments process.')
 @click_log.simple_verbosity_option(logger)
-def main(input_file, output_file, working_directory, tty_reset, tty_logging,
+def main(input_file, output_file, working_directory_xrtos,
+         working_directory_circle, tty_reset, tty_logging,
          min_observations, experiment_begin, experiment_count):
     if not isfile(input_file):
         print('Error: input file {}'.format(input_file), end=' ')
@@ -527,9 +566,9 @@ def main(input_file, output_file, working_directory, tty_reset, tty_logging,
         print('Error: output file {}'.format(output_file), end=' ')
         print('already exists!')
         exit(1)
-    do_experiments(input_file, output_file, working_directory,
-                   tty_reset, tty_logging, min_observations,
-                   experiment_begin, experiment_count)
+    do_experiments(input_file, output_file, working_directory_xrtos,
+                   working_directory_circle, tty_reset, tty_logging,
+                   min_observations, experiment_begin, experiment_count)
 
 
 if __name__ == "__main__":
