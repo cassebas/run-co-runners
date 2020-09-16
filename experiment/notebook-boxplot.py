@@ -37,7 +37,7 @@ for cores in range(1, 5):
     prod = product(benchmarks, repeat=cores)
     for p in prod:
         bench = ''.join(p)
-        g = 'report/data/cyclesdata-MIDTERM_*.csv'.format(cores, bench)
+        g = 'report/data/*.csv'.format(cores, bench)
         filenames = glob.glob(g)
         flist += filenames
 
@@ -50,9 +50,12 @@ for f in flist:
         label = m.group(1)
         df = pd.read_csv(f, sep=' ')
         df = df.loc[df['core'] == 0]
-        maximum = df['cycles'].max()
-        median = df['cycles'].median()
-        print('Filename:{} Experiment:{}  WCET is {}, which is {:1.3f} times more than the median {}.'.format(f, label, maximum, maximum/median, median))
+        for offset in range(0, 11):
+            df = df.loc[df['offset'] == offset]
+            if len(df.index) > 0:
+                maximum = df['cycles'].max()
+                median = df['cycles'].median()
+                print('Experiment:{}\tWCET:{:10.0f}\t\tMedian:{:10.0f}\tFactor:{:8.3f}\toffset:{}'.format(label, maximum, median, maximum/median, offset))
 
 # +
 flist = []
