@@ -42,46 +42,49 @@ def remove_quotes(string):
 
 class Fields(Enum):
     NUMBER = 1
-    CONFIG_SERIES = 2
-    CONFIG_BENCH = 3
-    DISABLE_CACHE = 4
-    ENABLE_MMU = 5
-    ENABLE_SCREEN = 6
-    NO_CACHE_MGMT = 7
-    SB_DATASIZE = 8
+    PLATFORM = 2
+    RASPBERRYPI = 3
+    CONFIG_SERIES = 4
+    CONFIG_BENCH = 5
+    ENABLE_MMU = 6
+    ENABLE_SCREEN = 7
+    NO_CACHE_MGMT = 8
     EXP_LABEL = 9
     PMU_CORE0 = 10
     PMU_CORE1 = 11
     PMU_CORE2 = 12
     PMU_CORE3 = 13
-    DISP_INPUT = 14
-    BSORT_INPUT = 15
-    MATMULT_INPUT = 16
-    TICK_RATE_HZ = 17
+    INPUTSIZE_CORE0 = 14
+    INPUTSIZE_CORE1 = 15
+    INPUTSIZE_CORE2 = 16
+    INPUTSIZE_CORE3 = 17
+    DELAY_STEP_COUNTDOWN = 18
 
 
 flds = {
     Fields.NUMBER: 'experiment number',
+    Fields.PLATFORM: 'platform',
+    Fields.RASPBERRYPI: 'raspberrypi',
     Fields.CONFIG_SERIES: 'benchmark series',
     Fields.CONFIG_BENCH: 'benchmark configuration',
-    Fields.DISABLE_CACHE: 'disable cache',  # not implemented for now
     Fields.ENABLE_MMU: 'enable mmu',
     Fields.ENABLE_SCREEN: 'enable screen',
     Fields.NO_CACHE_MGMT: 'no cache management',
-    Fields.SB_DATASIZE: 'synbench datasize',
     Fields.EXP_LABEL: 'experiment label',
     Fields.PMU_CORE0: 'pmu core 0',
     Fields.PMU_CORE1: 'pmu core 1',
     Fields.PMU_CORE2: 'pmu core 2',
     Fields.PMU_CORE3: 'pmu core 3',
-    Fields.DISP_INPUT: 'disparity inputsize',
-    Fields.BSORT_INPUT: 'bsort inputsize',
-    Fields.MATMULT_INPUT: 'matmult inputsize',
+    Fields.INPUTSIZE_CORE0: 'input size core0',
+    Fields.INPUTSIZE_CORE1: 'input size core1',
+    Fields.INPUTSIZE_CORE2: 'input size core2',
+    Fields.INPUTSIZE_CORE3: 'input size core3',
+    Fields.DELAY_STEP_COUNTDOWN: 'delay step countdown',
 }
 
 
 def get_experiment_labels(input_file):
-    df = pd.read_excel(input_file)
+    df = pd.read_excel(input_file, skiprows=[0])
 
     # first pass, extract all 1-core experiments that are baseline
     # to the other experiments
@@ -111,13 +114,12 @@ def get_experiment_labels(input_file):
             # This key will be used for matching against the multiple core
             # experiments with the same parameters.
             exp_key = str(config_series) + str(config_bench) + '_'
+            exp_key += str(row[flds[Fields.PLATFORM]]) + '_'
+            exp_key += str(row[flds[Fields.RASPBERRYPI]]) + '_'
             exp_key += str(row[flds[Fields.ENABLE_MMU]]) + '_'
             exp_key += str(row[flds[Fields.ENABLE_SCREEN]]) + '_'
             exp_key += str(row[flds[Fields.NO_CACHE_MGMT]]) + '_'
-            exp_key += str(row[flds[Fields.SB_DATASIZE]]) + '_'
-            exp_key += str(row[flds[Fields.DISP_INPUT]]) + '_'
-            exp_key += str(row[flds[Fields.BSORT_INPUT]]) + '_'
-            exp_key += str(row[flds[Fields.MATMULT_INPUT]])
+            exp_key += str(row[flds[Fields.INPUTSIZE_CORE0]])
             exp_keys[exp_key] = row[flds[Fields.EXP_LABEL]]
 
     # second pass, extract all n-core experiments that have co-runners
@@ -133,13 +135,12 @@ def get_experiment_labels(input_file):
         # experiment with the same parameters.
         # Note that the 1-core experiment will also be matched to itself.
         exp_key = str(config_series[0]) + str(config_bench[0]) + '_'
+        exp_key += str(row[flds[Fields.PLATFORM]]) + '_'
+        exp_key += str(row[flds[Fields.RASPBERRYPI]]) + '_'
         exp_key += str(row[flds[Fields.ENABLE_MMU]]) + '_'
         exp_key += str(row[flds[Fields.ENABLE_SCREEN]]) + '_'
         exp_key += str(row[flds[Fields.NO_CACHE_MGMT]]) + '_'
-        exp_key += str(row[flds[Fields.SB_DATASIZE]]) + '_'
-        exp_key += str(row[flds[Fields.DISP_INPUT]]) + '_'
-        exp_key += str(row[flds[Fields.BSORT_INPUT]]) + '_'
-        exp_key += str(row[flds[Fields.MATMULT_INPUT]])
+        exp_key += str(row[flds[Fields.INPUTSIZE_CORE0]])
 
         label = row[flds[Fields.EXP_LABEL]]
         if exp_key in exp_keys:
