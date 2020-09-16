@@ -2,19 +2,15 @@ import click
 import click_log
 import logging
 import os
-# from os.path import basename, isfile, join
-from os.path import isfile
+from os.path import isfile, isabs
 import subprocess
 from subprocess import CalledProcessError
-# import numpy as np
 import pandas as pd
 import re
 import time
 from enum import Enum
-# import signal
 from threading import Thread
 import serial
-# from warnings import warn
 import sys
 
 
@@ -45,7 +41,7 @@ class Fields(Enum):
 
 class Compile:
     def __init__(self):
-        self.scriptdir = os.getcwd()
+        self.scriptdir = sys.path[0]
         self.working_dir = None
 
     def create_benchmark_config(self, benchmark_config_cmd):
@@ -64,10 +60,13 @@ class Compile:
 
     def make(self, makecmd):
         logger.debug('make: working_dir={}'.format(self.working_dir))
+        logger.debug('make: makecmd={}'.format(makecmd))
         os.chdir(self.working_dir)
+        logger.debug('New curdir is {}'.format(os.getcwd()))
+
         try:
             # do the actual compilation
-            logger.info('Run {}'.format(makecmd))
+            logger.info('Running {}'.format(makecmd))
             cp = subprocess.run(makecmd,
                                 check=True,
                                 capture_output=True,
@@ -79,13 +78,15 @@ class Compile:
         except (CalledProcessError, UnicodeDecodeError):
             logger.warning('Make subprocess resulted ' +
                            'in an error!')
+            print("Error is of type: ", sys.exc_info()[0])
+            print(self.myenv)
+            raise
         os.chdir(self.scriptdir)
 
     def set_environment(self, raspberrypi):
-        self.myenv = dict(os.environ,
-                          BENCHMARK_CONFIG='-DBENCHMARK_CONFIG_M4')
-        self.myenv = dict(os.environ,
-                          RASPPI=raspberrypi)
+        self.myenv = dict(os.environ)
+        self.myenv['BENCHMARK_CONFIG'] = '-DBENCHMARK_CONFIG_M4'
+        self.myenv['RASPPI'] = '{}'.format(raspberrypi)
 
     def set_working_dir(self, working_dir):
         self.working_dir = working_dir
@@ -132,26 +133,18 @@ class Compile:
             # if inputsizes is not None, it must be a tuple of four
             input_core0, input_core1, input_core2, input_core3 = inputsizes
             if not pd.isnull(input_core0):
-                input_core0 = re.sub(r'^\'', '', input_core0)
-                input_core0 = re.sub(r'\'$', '', input_core0)
                 input_core0_param = '-Dinputsize_core0={}'.format(input_core0)
                 logger.debug('input_core0={}'.format(input_core0))
                 arg_m4_list.append(input_core0_param)
             if not pd.isnull(input_core1):
-                input_core1 = re.sub(r'^\'', '', input_core1)
-                input_core1 = re.sub(r'\'$', '', input_core1)
                 input_core1_param = '-Dinputsize_core1={}'.format(input_core1)
                 logger.debug('input_core0={}'.format(input_core0))
                 arg_m4_list.append(input_core1_param)
             if not pd.isnull(input_core2):
-                input_core2 = re.sub(r'^\'', '', input_core2)
-                input_core2 = re.sub(r'\'$', '', input_core2)
                 input_core2_param = '-Dinputsize_core2={}'.format(input_core2)
                 logger.debug('input_core2={}'.format(input_core2))
                 arg_m4_list.append(input_core2_param)
             if not pd.isnull(input_core3):
-                input_core3 = re.sub(r'^\'', '', input_core3)
-                input_core3 = re.sub(r'\'$', '', input_core3)
                 input_core3_param = '-Dinputsize_core3={}'.format(input_core3)
                 logger.debug('input_core3={}'.format(input_core3))
                 arg_m4_list.append(input_core3_param)
@@ -296,7 +289,11 @@ class LogProcessor(SerialThread):
         self.input_ok = False
         # start/stop thread flag
         self.run_thread = False
-        self.logfile = output_file
+        if isabs(output_file):
+            self.logfile = output_file
+        else:
+            self.logfile = sys.path[0] + '/' + output_file
+        logger.debug('Logfile path is {}'.format(self.logfile))
         self.filehandle = None
         self.connected = False
         self.no_match = 0
@@ -350,12 +347,15 @@ class LogProcessor(SerialThread):
                 time.sleep(0.5)
 
     def open_logfile(self):
+        logger.debug('Logfile to open is {}'.format(self.logfile))
+        logger.debug('Current directory is {}'.format(os.getcwd()))
         # open logfile for writing
         try:
             self.filehandle = open(self.logfile, 'w')
         except Exception:
             logger.error('Could not open file ' +
                          '{}'.format(self.logfile))
+            raise
 
     def is_logical_iteration(self, iteration):
         if iteration == self.iteration:
@@ -417,6 +417,18 @@ def do_experiments(infile, outfile, workdir_xrtos, workdir_circle,
     # the main circle directory.
     platform = df.loc[0, flds[Fields.PLATFORM]]
     raspberrypi = df.loc[0, flds[Fields.RASPBERRYPI]]
+    labelstart = platform.upper() + '_' + 'PI' + str(raspberrypi) + '_'
+
+    logger.debug('Platform read is {}'.format(platform))
+    logger.debug('Raspberry Pi version read is {}'.format(raspberrypi))
+
+    logger.info('Instantiating LogProcessor object.')
+    log_processor = LogProcessor(tty_logging, outfile)
+    log_processor.start_thread()
+
+    logger.info('Instantiating Resetter object.')
+    resetter = Resetter(tty_reset, log_processor, min_observations)
+    resetter.start_thread()
 
     logger.info('Instantiating Compile object.')
     comp = Compile()
@@ -435,18 +447,15 @@ def do_experiments(infile, outfile, workdir_xrtos, workdir_circle,
     else:
         comp.set_working_dir(workdir_xrtos)
 
-    logger.info('Instantiating LogProcessor object.')
-    log_processor = LogProcessor(tty_logging, outfile)
-    log_processor.start_thread()
-
-    logger.info('Instantiating Resetter object.')
-    resetter = Resetter(tty_reset, log_processor, min_observations)
-    resetter.start_thread()
-
     # Convert boolean fields to actual bool type
     df[flds[Fields.NO_CACHE_MGMT]] = df[flds[Fields.NO_CACHE_MGMT]].astype(bool)
     df[flds[Fields.ENABLE_MMU]] = df[flds[Fields.ENABLE_MMU]].astype(bool)
     df[flds[Fields.ENABLE_SCREEN]] = df[flds[Fields.ENABLE_SCREEN]].astype(bool)
+    # Convert input fields to actual int type
+    df[flds[Fields.INPUTSIZE_CORE0]] = df[flds[Fields.INPUTSIZE_CORE0]].astype(int)
+    df[flds[Fields.INPUTSIZE_CORE1]] = df[flds[Fields.INPUTSIZE_CORE1]].astype(int)
+    df[flds[Fields.INPUTSIZE_CORE2]] = df[flds[Fields.INPUTSIZE_CORE2]].astype(int)
+    df[flds[Fields.INPUTSIZE_CORE3]] = df[flds[Fields.INPUTSIZE_CORE3]].astype(int)
 
     for idx, row in df.iterrows():
         number = row[flds[Fields.NUMBER]]
@@ -461,7 +470,7 @@ def do_experiments(infile, outfile, workdir_xrtos, workdir_circle,
 
             config_series = row[flds[Fields.CONFIG_SERIES]]
             config_bench = row[flds[Fields.CONFIG_BENCH]]
-            label = row[flds[Fields.EXP_LABEL]]
+            label = labelstart + row[flds[Fields.EXP_LABEL]]
             no_cache_mgmt = row[flds[Fields.NO_CACHE_MGMT]]
             enable_mmu = row[flds[Fields.ENABLE_MMU]]
             enable_screen = row[flds[Fields.ENABLE_SCREEN]]
