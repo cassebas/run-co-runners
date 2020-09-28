@@ -102,4 +102,4 @@ $(PNG_DATA): $(CSV_DATA_CYCLES)
 	python data2linearchart.py --input-file=$(CSV) --output-directory=$(IMG_DIR) --maximum-observations=250 --movingaverage-window=0 --process-events=True
 
 clean:
-	rm -f $(CSV_CYCLE_LOGS) $(CSV_EVENT_LOGS) $(CSV_DATA_CYCLES) $(CSV_DATA_EVENTS) $(CSV_SUMMARIES) $(TEX_SUMMARIES) $(TEX_SUMMARIES_COMBINED) $(PNG_DATA_CLEAN)
+	rm -f $(CSV_LOGS_CYCLES) $(CSV_LOGS_EVENTS) $(CSV_DATA_CYCLES) $(CSV_DATA_EVENTS) $(CSV_SUMMARIES) $(TEX_SUMMARIES) $(TEX_SUMMARIES_COMBINED) $(PNG_DATA_CLEAN)
