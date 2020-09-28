@@ -164,7 +164,7 @@ def get_experiment_data(csv_dir):
         df_pivot = pd.pivot_table(df,
                                   index=['label', 'cores',
                                          'config_series', 'config_benchmarks',
-                                         'pattern'],
+                                         'offset'],
                                   columns=['benchmark', 'core'],
                                   values='cycles',
                                   aggfunc={'cycles': [np.median,
@@ -204,22 +204,22 @@ def get_experiment_results(exp_labels, exp_data):
                 benchmark = re.sub(r' ', '', benchmark)
                 # strip '-' from benchmark name
                 benchmark = re.sub(r'-', '', benchmark)
-                pattern_list = df_tmp.index.get_level_values(3)
-                logger.debug('pattern list is {}'.format(pattern_list))
+                offset_list = df_tmp.index.get_level_values(3)
+                logger.debug('offset list is {}'.format(offset_list))
 
-                for pattern in pattern_list:
-                    df_tmp_pattern = df_tmp.loc[(slice(None),
-                                                 slice(None),
-                                                 slice(None),
-                                                 pattern),
-                                                (slice(None),
-                                                 [benchmark],
-                                                 ['core0'])]
+                for offset in offset_list:
+                    df_tmp_offset = df_tmp.loc[(slice(None),
+                                                slice(None),
+                                                slice(None),
+                                                offset),
+                                               (slice(None),
+                                                [benchmark],
+                                                ['core0'])]
 
                     # dftmp now contains one row, three cols (max, median, std)
-                    wcet = df_tmp_pattern.iloc[0, 0]
-                    median = df_tmp_pattern.iloc[0, 1]
-                    std = df_tmp_pattern.iloc[0, 2]
+                    wcet = df_tmp_offset.iloc[0, 0]
+                    median = df_tmp_offset.iloc[0, 1]
+                    std = df_tmp_offset.iloc[0, 2]
                     if median != 0:
                         wcet_median_factor = wcet / median
                     else:
@@ -252,14 +252,14 @@ def get_experiment_results(exp_labels, exp_data):
                             std_factor = None
 
                         logger.debug('Label:{} '.format(label) +
-                                     'pattern:{} '.format(pattern) +
+                                     'offset:{} '.format(offset) +
                                      'Slowdown ' +
                                      'factor:{}'.format(wcet/wcet1))
                         ps = pd.Series({'label': label,
                                         'label1core': label1core,
                                         'cores': cores,
                                         'benchmark': benchmark,
-                                        'pattern': pattern,
+                                        'offset': offset,
                                         'wcet': wcet,
                                         'wcet_median_factor': wcet_median_factor,
                                         'slowdown_factor': slowdown_factor,

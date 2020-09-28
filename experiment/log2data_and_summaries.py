@@ -38,8 +38,8 @@ def export_dataframe(df, output_mode, metric, axis0, axis1, output_directory):
     #   output_mode==summary
     #     (label, cores, config_series, config_bench, slice(None))
     #   output_mode==data
-    #     (label, cores, config_series, config_bench, pattern)
-    (label, cores, config_series, config_bench, pattern) = axis0
+    #     (label, cores, config_series, config_bench, offset)
+    (label, cores, config_series, config_bench, offset) = axis0
 
     try:
         df_exp = df.loc[axis0, axis1]
@@ -51,7 +51,6 @@ def export_dataframe(df, output_mode, metric, axis0, axis1, output_directory):
 
             config_series = remove_quotes(config_series)
             config_bench = remove_quotes(config_bench)
-            pattern = remove_quotes(pattern)
 
             output_filename = '{}{}-{}-'.format(metric, output_mode, label)
             output_filename += 'core{}-'.format(cores)
@@ -59,7 +58,7 @@ def export_dataframe(df, output_mode, metric, axis0, axis1, output_directory):
             output_filename += 'configbench{}'.format(config_bench)
 
             if output_mode == 'data':
-                output_filename += '-{}{}.csv'.format('pattern', pattern)
+                output_filename += '-{}{}.csv'.format('offset', offset)
             else:
                 output_filename += '.csv'
             logger.debug('output_filename={}'.format(output_filename))
@@ -108,7 +107,7 @@ def main(input_file, output_directory, output_mode, metric):
 
     # Construct a pivot table:
     #  - benchmarks/core will be indexed as columns,
-    #  - cores, configuration, dassign, pattern will be the index
+    #  - cores, configuration, dassign, offset will be the index
     # From this pivot table we can easily select the median/std cycles and
     # output them to specific CSV files for specific benchmarks/config/dassign.
     # These resulting CSV files are read from within LaTeX.
@@ -122,7 +121,7 @@ def main(input_file, output_directory, output_mode, metric):
 
         df = df.set_index(keys=['label', 'cores',
                                 'config_series', 'config_benchmarks',
-                                'pattern'])
+                                'offset'])
     elif output_mode == 'summary':
         if metric == 'events':
             logger.error('Illegal metric for ' +
@@ -133,7 +132,7 @@ def main(input_file, output_directory, output_mode, metric):
         df = pd.pivot_table(df,
                             index=['label', 'cores',
                                    'config_series', 'config_benchmarks',
-                                   'pattern'],
+                                   'offset'],
                             columns=['benchmark', 'core'],
                             values='cycles',
                             aggfunc={'cycles': [np.median, np.std]})
@@ -148,14 +147,14 @@ def main(input_file, output_directory, output_mode, metric):
         exit(1)
 
     df.sort_index(inplace=True)
-    print(df.index)
+
     # Now output a series of CVS files that contain the summaries
     # The index levels of the df dataframe are:
     #  - level 0: label of experiment
     #  - level 1: number of cores
     #  - level 2: configuration series string
     #  - level 3: configuration benchmarks string
-    #  - level 4: alignment pattern string
+    #  - level 4: alignment offset
 
     axis1 = (slice(None))
     for label in set(df.index.get_level_values(0)):
@@ -173,7 +172,6 @@ def main(input_file, output_directory, output_mode, metric):
             for config_series in set(config_series_list):
                 logger.debug('config_series={}.'.format(config_series))
                 dfconfig_series = dfcore.loc[config_series, :]
-                print(dfconfig_series)
                 config_bench_list = dfconfig_series.index.get_level_values(0)
                 logger.debug('config_bench_list={}'.format(config_bench_list))
 
@@ -188,13 +186,13 @@ def main(input_file, output_directory, output_mode, metric):
 
                     else:  # output_mode == 'data':
                         dfconfig_bench = dfconfig_series.loc[config_bench, :]
-                        pattern_list = dfconfig_bench.index.get_level_values(0)
-                        logger.debug('pattern_list={}'.format(pattern_list))
+                        offset_list = dfconfig_bench.index.get_level_values(0)
+                        logger.debug('offset_list={}'.format(offset_list))
 
-                        for pattern in set(pattern_list):
-                            logger.debug('pattern={}'.format(pattern))
+                        for offset in set(offset_list):
+                            logger.debug('offset={}'.format(offset))
                             axis0 = (label, cores, config_series, config_bench,
-                                     pattern)
+                                     offset)
                             export_dataframe(df, output_mode, metric, axis0,
                                              axis1, output_directory)
 

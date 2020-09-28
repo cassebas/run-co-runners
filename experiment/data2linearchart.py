@@ -120,12 +120,9 @@ def main(input_file, output_directory, maximum_observations,
             dfevents = pd.read_csv(f, sep=' ')
             logger.debug('Have read the events dataframe.')
         else:
-            logger.warning('Could not found corresponding events ' +
-                           'filename {}.'.format(f))
+            logger.info('Corresponing events filename {}'.format(f) +
+                        ' not found, not processing events.')
             process_events = False
-    # assert process_events is (dfevents is not None)
-    if dfevents is None:
-        logger.warning('dfevents is None!')
 
     # Get experiment label
     experiment_labels = df.label.unique()
@@ -163,22 +160,27 @@ def main(input_file, output_directory, maximum_observations,
         logger.warning('Length of config_bench string is not equal number of cores!')
     logger.debug('config_bench={}'.format(config_bench))
 
-    pattern_list = df.pattern.unique()
-    if len(pattern_list) != 1:
-        logger.warning('The uniqueness of the pattern column values is not 1!')
-    pattern = remove_quotes(pattern_list[0])
-    logger.debug('pattern={}'.format(pattern))
+    offset_list = df.offset.unique()
+    if len(offset_list) != 1:
+        logger.warning('The uniqueness of the offset column values is not 1!')
+    offset = offset_list[0]
+    logger.debug('offset={}'.format(offset))
 
     benchmarks = [benchmark_list[int(tup[0])-1][int(tup[1])-1]
                   for tup in zip(config_series, config_bench)]
     logger.debug('benchmarks={}'.format(benchmarks))
 
     # Start constructing output filename
-    output_filename = 'cycles{}-{}-'.format('data', exp_name)
+    output_filename = 'cycles{}-{}-'.format('data', exp_label)
+    logger.debug('output_filename={}'.format(output_filename))
     output_filename += '{}core-'.format(cores)
+    logger.debug('output_filename={}'.format(output_filename))
     output_filename += 'configseries{}-'.format(config_series)
+    logger.debug('output_filename={}'.format(output_filename))
     output_filename += 'configbench{}-'.format(config_bench)
-    output_filename += '{}{}'.format('pattern', pattern)
+    logger.debug('output_filename={}'.format(output_filename))
+    output_filename += '{}{}'.format('offset', offset)
+    logger.debug('output_filename={}'.format(output_filename))
 
     if dfevents is not None:
         dfevents = dfevents.set_index(keys=['core', 'pmu'])
@@ -192,16 +194,21 @@ def main(input_file, output_directory, maximum_observations,
         nr_of_pmus = len(set(dfevents.index.get_level_values(1)))
         for pmu in range(1, nr_of_pmus+1):
             pmu_filename = output_filename + '-PMU{}'.format(pmu) + '.png'
+            logger.debug('pmu_filename={}'.format(pmu_filename))
             outfile = join(output_directory, pmu_filename)
-            output_image(df, cores, dfevents, pmu, win, benchmarks,
-                         exp_label, outfile)
+            if not isfile(outfile):
+                # Only generate image if output file doesn't already exist
+                output_image(df, cores, dfevents, pmu, win, benchmarks,
+                             exp_label, outfile)
 
     else:
         output_filename += '.png'
         logger.debug('output_filename={}'.format(output_filename))
         outfile = join(output_directory, output_filename)
-        output_image(df, cores, None, 0, win, benchmarks,
-                     exp_label, outfile)
+        if not isfile(outfile):
+            # Only generate image if output file doesn't already exist
+            output_image(df, cores, None, 0, win, benchmarks,
+                         exp_label, outfile)
 
 
 def output_image(dfcycles, cores, dfevents, pmu, win, benchmarks,
