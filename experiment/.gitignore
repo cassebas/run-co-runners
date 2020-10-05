@@ -4,4 +4,3 @@ auto
 .python-version
 __pycache__
 output
-slowdown-factors*.csv
