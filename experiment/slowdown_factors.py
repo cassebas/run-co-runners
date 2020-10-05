@@ -17,6 +17,8 @@ from threading import Thread
 import serial
 # from warnings import warn
 import sys
+import scipy
+import scikits.bootstrap as bootstrap
 
 
 benchmark_list = [
@@ -83,6 +85,25 @@ flds = {
 }
 
 
+def get_check_inputsize(label, inputsize=None):
+    regex = re.compile('^.*_INPUTSIZE([0-9]+)$')
+    m = regex.match(label)
+    if (m):
+        label_inputsize = m.group(1)
+        if inputsize is None:
+            return label_inputsize
+        elif label_inputsize == inputsize:
+            return inputsize
+        else:
+            logger.warning(f'Inputsize {inputsize} is not equal to the ' +
+                           f'retrieved from label {label}!')
+            return label_inputsize
+    else:
+        logger.warning(f'Inputsize could not be retrieved from label {label}!')
+        logger.warning('Label does not follow format /.*_INPUTSIZE[0-9]+$/')
+        return None
+
+
 def get_experiment_labels(input_file):
     df = pd.read_excel(input_file, skiprows=[0])
 
@@ -120,7 +141,12 @@ def get_experiment_labels(input_file):
             exp_key += str(row[flds[Fields.ENABLE_SCREEN]]) + '_'
             exp_key += str(row[flds[Fields.NO_CACHE_MGMT]]) + '_'
             exp_key += str(row[flds[Fields.INPUTSIZE_CORE0]])
-            exp_keys[exp_key] = row[flds[Fields.EXP_LABEL]]
+            # In the experiments, the experiment label is pre-pended
+            # with the platform + raspberry pi version:
+            label = (str(row[flds[Fields.PLATFORM]]).upper() + '_PI' +
+                     str(row[flds[Fields.RASPBERRYPI]]) + '_' +
+                     row[flds[Fields.EXP_LABEL]])
+            exp_keys[exp_key] = label
 
     # second pass, extract all n-core experiments that have co-runners
     for idx, row in df.iterrows():
@@ -131,6 +157,12 @@ def get_experiment_labels(input_file):
         config_series = remove_quotes(config_series)
         config_bench = remove_quotes(config_bench)
 
+        # Retrieve inputsize from label, and verify its correctness with
+        # the inputsize present in the Excel sheet
+        inputsize = str(row[flds[Fields.INPUTSIZE_CORE0]])
+        exp_label = row[flds[Fields.EXP_LABEL]]
+        inputsize = get_check_inputsize(exp_label, inputsize)
+
         # Construct the hash key for matching against the 1-core
         # experiment with the same parameters.
         # Note that the 1-core experiment will also be matched to itself.
@@ -140,9 +172,12 @@ def get_experiment_labels(input_file):
         exp_key += str(row[flds[Fields.ENABLE_MMU]]) + '_'
         exp_key += str(row[flds[Fields.ENABLE_SCREEN]]) + '_'
         exp_key += str(row[flds[Fields.NO_CACHE_MGMT]]) + '_'
-        exp_key += str(row[flds[Fields.INPUTSIZE_CORE0]])
-
-        label = row[flds[Fields.EXP_LABEL]]
+        exp_key += inputsize
+        # In the experiments, the experiment label is pre-pended
+        # with the platform + raspberry pi version:
+        label = (str(row[flds[Fields.PLATFORM]].upper()) + '_PI' +
+                 str(row[flds[Fields.RASPBERRYPI]]) + '_' +
+                 row[flds[Fields.EXP_LABEL]])
         if exp_key in exp_keys:
             exp_mapping[label] = exp_keys[exp_key]
 
@@ -155,12 +190,27 @@ def get_experiment_labels(input_file):
     return df_mapping
 
 
-def get_experiment_data(csv_dir):
+def get_ci(data):
+    # Compute confidence interval
+    interval = bootstrap.ci(data,
+                            statfunction=scipy.mean,
+                            alpha=0.05)
+    logger.debug(f'Interval is ({interval[0]}, {interval[1]})')
+    return interval
+
+
+def get_experiment_data(csv_dir, csv_file_prefix):
     df = pd.DataFrame()
     dfs = pd.DataFrame()
-    infiles = glob.glob(join(csv_dir, '*-cycles.csv'))
+    infiles = glob.glob(join(csv_dir, csv_file_prefix + '*-cycles.csv'))
     for f in infiles:
+        logger.debug(f'Reading input file {f}')
         df = pd.read_csv(f)
+        # Drop rows with 1 core and offset > 0
+        df = df[(df['cores'] > 1) | (df['offset'] == 0)]
+        # Drop rows with offset > 10
+        df = df[df['offset'] <= 10]
+
         df_pivot = pd.pivot_table(df,
                                   index=['label', 'cores',
                                          'config_series', 'config_benchmarks',
@@ -168,6 +218,7 @@ def get_experiment_data(csv_dir):
                                   columns=['benchmark', 'core'],
                                   values='cycles',
                                   aggfunc={'cycles': [np.median,
+                                                      np.mean,
                                                       np.std,
                                                       np.max]})
         df_pivot = df_pivot.rename(columns={0: 'core0',
@@ -179,12 +230,14 @@ def get_experiment_data(csv_dir):
     return dfs
 
 
-def get_experiment_results(exp_labels, exp_data):
+def get_experiment_results(exp_labels, exp_data, data_dir):
     exp_results = pd.DataFrame()
 
     # Extend the experiments dataframe with result data
     for idx, row in exp_labels.iterrows():
         label = row['label']
+        inputsize = get_check_inputsize(label)
+        logger.debug(f'Inputsize {inputsize} retrieved from label={label}')
         try:
             df_tmp = exp_data.loc[label,
                                   (slice(None), slice(None), ['core0'])]
@@ -216,14 +269,32 @@ def get_experiment_results(exp_labels, exp_data):
                                                 [benchmark],
                                                 ['core0'])]
 
-                    # dftmp now contains one row, three cols (max, median, std)
+                    # To obtain the confidence interval, we now have to
+                    # read a different file, containing the data instead of
+                    # the summary information we have in df_tmp (it's a pivot
+                    # table). The data file is obtained from data_dir
+                    try:
+                        infile = '{}{}-{}-'.format('cycles', 'data', label)
+                        infile += 'core{}-'.format(cores)
+                        infile += 'configseries{}-'.format(config_series)
+                        infile += 'configbench{}'.format(config_bench)
+                        infile += '-{}{}.csv'.format('offset', offset)
+                        infile = join(data_dir, infile)
+                        data_df = pd.read_csv(infile, sep=' ')
+                        data_df = data_df[data_df['core'] == 0]
+                        conf_interval = get_ci(data_df['cycles'])
+                    except FileNotFoundError:
+                        logger.warning(f'Could not open {infile} for' +
+                                       ' computing confidence interval.')
+                        conf_interval = (None, None)
+
+                    # dftmp_offset now contains one row, 4 cols
+                    # (amax, mean, median, std)
+                    print(df_tmp_offset)
                     wcet = df_tmp_offset.iloc[0, 0]
-                    median = df_tmp_offset.iloc[0, 1]
-                    std = df_tmp_offset.iloc[0, 2]
-                    if median != 0:
-                        wcet_median_factor = wcet / median
-                    else:
-                        wcet_median_factor = None
+                    mean = df_tmp_offset.iloc[0, 1]
+                    median = df_tmp_offset.iloc[0, 2]
+                    std = df_tmp_offset.iloc[0, 3]
 
                     label1core = row['label1core']
                     df1_tmp = exp_data.loc[label1core,
@@ -231,42 +302,44 @@ def get_experiment_results(exp_labels, exp_data):
                                             [benchmark],
                                             ['core0'])]
                     if len(df1_tmp.index) > 0:
-                        # dftmp now contains one row, three cols (max, median, std)
+                        # df1_tmp now contains one row, 4 cols
+                        # (amax, mean, median, std)
+                        print(df1_tmp)
                         wcet1 = df1_tmp.iloc[0, 0]
-                        median1 = df1_tmp.iloc[0, 1]
-                        std1 = df1_tmp.iloc[0, 2]
+                        mean1 = df1_tmp.iloc[0, 1]
+                        # median1 = df1_tmp.iloc[0, 2]
+                        # std1 = df1_tmp.iloc[0, 3]
+
+                        if mean != 0:
+                            slowdown = mean / mean1
+                        else:
+                            slowdown = None
 
                         if wcet1 != 0:
-                            slowdown_factor = wcet / wcet1
+                            slowdown_wcet = wcet / wcet1
                         else:
-                            slowdown_factor = None
+                            slowdown_wcet = None
 
-                        if median1 != 0:
-                            median_factor = median / median1
-                        else:
-                            median_factor = None
-
-                        if std1 != 0:
-                            std_factor = std / std1
-                        else:
-                            std_factor = None
-
-                        logger.debug('Label:{} '.format(label) +
-                                     'offset:{} '.format(offset) +
-                                     'Slowdown ' +
-                                     'factor:{}'.format(wcet/wcet1))
+                        logger.debug(f'Label:{label}' +
+                                     f'offset:{offset} ' +
+                                     f'slowdown factor:{slowdown} ' +
+                                     f'slowdown factor wcet:{slowdown_wcet}')
                         ps = pd.Series({'label': label,
                                         'label1core': label1core,
                                         'cores': cores,
                                         'benchmark': benchmark,
+                                        'inputsize': inputsize,
                                         'offset': offset,
+                                        'mean': mean,
+                                        'confidence_lo': conf_interval[0],
+                                        'confidence_hi': conf_interval[1],
+                                        'mean1core': mean1,
+                                        'slowdown': slowdown,
                                         'wcet': wcet,
-                                        'wcet_median_factor': wcet_median_factor,
-                                        'slowdown_factor': slowdown_factor,
+                                        'wcet1core': wcet1,
+                                        'slowdown_wcet': slowdown_wcet,
                                         'median': median,
-                                        'median_factor': median_factor,
-                                        'stdev': std,
-                                        'stdev_factor': std_factor})
+                                        'stdev': std})
                         exp_results = exp_results.append(ps, ignore_index=True)
         except KeyError:
             logger.debug('Caught KeyError for label {}'.format(label))
@@ -285,8 +358,14 @@ def get_experiment_results(exp_labels, exp_data):
 @click.option('--csv-dir',
               default='output',
               help='Path of the directory where the CSV logs are stored.')
+@click.option('--csv-file-prefix',
+              required=True,
+              help=('Prefix of input CSV filenames to be analysed.'))
+@click.option('--data-dir',
+              default='report/data',
+              help='Path of the directory where the data files are stored.')
 @click_log.simple_verbosity_option(logger)
-def main(input_file, output_file, csv_dir):
+def main(input_file, output_file, csv_dir, csv_file_prefix, data_dir):
     if not isfile(input_file):
         logger.error('Error: input file {} '.format(input_file) +
                      'does not exist!')
@@ -304,10 +383,10 @@ def main(input_file, output_file, csv_dir):
 
     logger.info('Reading experiment data from CSV files found ' +
                 'in directory "{}".'.format(csv_dir))
-    exp_data = get_experiment_data(csv_dir)
+    exp_data = get_experiment_data(csv_dir, csv_file_prefix)
 
     logger.info('Combining label mappings with experiment data...')
-    exp_results = get_experiment_results(exp_labels, exp_data)
+    exp_results = get_experiment_results(exp_labels, exp_data, data_dir)
     logger.info('Writing resulting slowdown factors to CSV ' +
                 'output file "{}".'.format(output_file))
     exp_results.to_csv(output_file, index=False, sep=' ')
