@@ -27,6 +27,11 @@ df = pd.read_csv(f, sep=' ')
 df = df[df['cores'] > 1]
 # Drop the labels, not necessary here
 df = df.drop(labels=['label', 'label1core'], axis=1)
+df['slowdown_hi'] = df['confidence_hi'] / df['mean1core']
+df['slowdown_lo'] = df['confidence_lo'] / df['mean1core']
+df = df[df['cores'] == 4]
+df = df[df['inputsize'] == 100]
+df
 
 # ## Inputsize 20
 
@@ -62,14 +67,14 @@ df100_4cores = df100[df100['cores'] == 4]
 df100_4cores
 
 fig, ax = plt.subplots(1,1, figsize=(10,5))  # 1 row, 2 columns
-ax2 = ax.twinx()
-ax.bar(df100_4cores['offset'], df100_4cores['wcet'], label='WCET', alpha=0.5, width=0.5)
+#ax2 = ax.twinx()
+ax.bar(df100_4cores['offset'], df100_4cores['slowdown'], label='Slowdown', alpha=0.5, width=0.5, yerr=(df100_4cores['slowdown']-df100_4cores['slowdown_lo']))
 ax.set_xlabel('offset')
-ax.set_ylabel('WCET cycles')
-ax.set_ylim([6400000, 8000000])
-ax2.plot(df100_4cores['offset'], df100_4cores['slowdown_factor'], label='slowdown', color='green')
-ax2.set_ylabel('slowdown factors')
+ax.set_ylabel('slowdown factor')
+ax.set_ylim([1, 2])
+#ax2.plot(df100_4cores['offset'], df100_4cores['slowdown_factor'], label='slowdown', color='green')
+#ax2.set_ylabel('slowdown factors')
 ax.legend(loc='upper left', fontsize=12)
-ax2.legend(loc='upper right', fontsize=12)
-ax2.set_ylim([1,2])
+#ax2.legend(loc='upper right', fontsize=12)
+#ax2.set_ylim([1,2])
 plt.title('Mälardalen matmult on core 0 and linear array write on cores 1,2,3')
