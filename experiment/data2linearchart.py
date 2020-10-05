@@ -26,14 +26,14 @@ benchmark_list = [
 pmu_event_names = {
     3: 'L1D_CACHE_REFILL',
     4: 'L1D_CACHE',
-    16: 'BR_MIS_PRED',
-    18: 'BR_PRED',
+    5: 'L1D_TLB_REFILL',
     19: 'MEM_ACCESS',
     21: 'L1D_CACHE_WB',
     22: 'L2D_CACHE',
     23: 'L2D_CACHE_REFILL',
     24: 'L2D_CACHE_WB',
     25: 'BUS_ACCESS',
+    29: 'BUS_CYCLES',
 }
 
 
@@ -253,14 +253,19 @@ def output_image(dfcycles, cores, dfevents, pmu, win, benchmarks,
                 logger.debug('Adding PMU plot')
                 logger.debug(dfevents.index)
                 dfcore_ev = dfevents.loc[(corenum, pmu), slice(None)]
-                dfcore_ev = dfcore_ev.set_index(keys=['iteration'])
-                eventname = dfcore_ev['eventname'].unique()[0]
-                ax2 = axi.twinx()
-                ax2.plot(dfcore_ev.index, dfcore_ev['eventcount'],
-                         marker='o', linestyle=None, color='green',
-                         label=eventname)
-                ax2.set_ylabel(eventname)
-                ax2.legend(loc=4)
+                if isinstance(dfcore_ev, pd.core.frame.DataFrame):
+                    dfcore_ev = dfcore_ev.set_index(keys=['iteration'])
+                    eventname = dfcore_ev['eventname'].unique()[0]
+                    ax2 = axi.twinx()
+                    ax2.plot(dfcore_ev.index, dfcore_ev['eventcount'],
+                             marker='o', linestyle=None, color='green',
+                             label=eventname)
+                    ax2.set_ylabel(eventname)
+                    ax2.legend(loc=4)
+                else:
+                    logger.warning('dfcore_ev is not a dataframe, ' +
+                                   ' incomplete file?')
+                    logger.warning(f'Output filename is {outfile}.')
             except KeyError:
                 logger.warning('Caught KeyError, core is {}, '.format(corenum) +
                                'PMU is {}'.format(pmu))
