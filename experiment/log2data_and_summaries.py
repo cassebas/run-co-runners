@@ -1,4 +1,3 @@
-import sys
 import click
 import click_log
 import logging
@@ -10,20 +9,6 @@ import re
 
 logger = logging.getLogger(__name__)
 click_log.basic_config(logger)
-
-
-pmu_event_names = {
-    3: 'L1D_CACHE_REFILL',
-    4: 'L1D_CACHE',
-    16: 'BR_MIS_PRED',
-    18: 'BR_PRED',
-    19: 'MEM_ACCESS',
-    21: 'L1D_CACHE_WB',
-    22: 'L2D_CACHE',
-    23: 'L2D_CACHE_REFILL',
-    24: 'L2D_CACHE_WB',
-    25: 'BUS_ACCESS',
-}
 
 
 def remove_quotes(quoted):
@@ -45,6 +30,7 @@ def export_dataframe(df, output_mode, metric, axis0, axis1, output_directory):
         df_exp = df.loc[axis0, axis1]
         df_exp = df_exp.dropna(axis=0, how='all')
         df_exp = df_exp.dropna(axis=1, how='all')
+
         if len(df_exp.index) > 0:
             if output_mode == 'summary':
                 df_exp.columns = df_exp.columns.to_series().str.join('-')
