@@ -19,7 +19,30 @@ import numpy as np
 import matplotlib.pyplot as plt
 import glob
 
-# # Mälardalen matrix multiplication PI 4
+
+def create_bar_plot(df, title):
+    fig, ax = plt.subplots(1,1, figsize=(10,5))
+    ax.bar(df['offset'], df['slowdown'], label='Slowdown', alpha=0.5, width=0.5, yerr=(df['slowdown']-df['slowdown_lo']))
+    ax.set_xlabel('offset')
+    ax.set_ylabel('slowdown factor')
+    ax.set_ylim([1, 2])
+    ax.legend(loc='upper left', fontsize=12)
+    plt.title(title)
+
+
+# # Mälardalen matrix multiplication --- Raspberry Pi 4
+
+# ## Mälardalen matrix multiplication --- 1 core
+
+f='slowdown-factors-malardalen-matmult_pi4-20201002.csv'
+df = pd.read_csv(f, sep=' ')
+# Show overview of the experiments with one label
+df = df[df['cores'] == 1]
+# Drop one of the labels, for 1 core both labels are the same
+df = df.drop(labels=['cores', 'label1core', 'mean1core', 'offset', 'slowdown', 'slowdown_wcet', 'wcet1core'], axis=1)
+df
+
+# ## Mälardalen matrix multiplication --- multiple cores
 
 f='slowdown-factors-malardalen-matmult_pi4-20201002.csv'
 df = pd.read_csv(f, sep=' ')
@@ -29,52 +52,34 @@ df = df[df['cores'] > 1]
 df = df.drop(labels=['label', 'label1core'], axis=1)
 df['slowdown_hi'] = df['confidence_hi'] / df['mean1core']
 df['slowdown_lo'] = df['confidence_lo'] / df['mean1core']
-df = df[df['cores'] == 4]
-df = df[df['inputsize'] == 100]
 df
 
-# ## Inputsize 20
+# ## Inputsize 20, 4 cores
 
 df20 = df[df['inputsize'] == 20]
+create_bar_plot(df20, 'Mälardalen matmult on core 0 and linear array write on cores 1,2,3 --- inputsize 20')
 df20
 
+# ## Inputsize 50, 4 cores
+
 df50 = df[df['inputsize'] == 50]
+create_bar_plot(df50, 'Mälardalen matmult on core 0 and linear array write on cores 1,2,3 --- inputsize 50')
 df50
 
+# ## Inputsize 80, 4 cores
+
 df80 = df[df['inputsize'] == 80]
+create_bar_plot(df80, 'Mälardalen matmult on core 0 and linear array write on cores 1,2,3 --- inputsize 80')
 df80
 
+# ## Inputsize 90, 4 cores
+
 df90 = df[df['inputsize'] == 90]
+create_bar_plot(df90, 'Mälardalen matmult on core 0 and linear array write on cores 1,2,3 --- inputsize 90')
 df90
 
-# ## Inputsize 100
+# ## Inputsize 100, 2 and 3 and 4 cores
 
 df100 = df[df['inputsize'] == 100]
-
-# ### 2 cores
-
-df100_2cores = df100[df100['cores'] == 2]
-df100_2cores
-
-# ### 3 cores
-
-df100_3cores = df100[df100['cores'] == 3]
-df100_3cores
-
-# ### 4 cores
-
-df100_4cores = df100[df100['cores'] == 4]
-df100_4cores
-
-fig, ax = plt.subplots(1,1, figsize=(10,5))  # 1 row, 2 columns
-#ax2 = ax.twinx()
-ax.bar(df100_4cores['offset'], df100_4cores['slowdown'], label='Slowdown', alpha=0.5, width=0.5, yerr=(df100_4cores['slowdown']-df100_4cores['slowdown_lo']))
-ax.set_xlabel('offset')
-ax.set_ylabel('slowdown factor')
-ax.set_ylim([1, 2])
-#ax2.plot(df100_4cores['offset'], df100_4cores['slowdown_factor'], label='slowdown', color='green')
-#ax2.set_ylabel('slowdown factors')
-ax.legend(loc='upper left', fontsize=12)
-#ax2.legend(loc='upper right', fontsize=12)
-#ax2.set_ylim([1,2])
-plt.title('Mälardalen matmult on core 0 and linear array write on cores 1,2,3')
+create_bar_plot(df100, 'Mälardalen matmult on core 0 and linear array write on cores 1,2,3 --- inputsize 100')
+df100
