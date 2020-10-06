@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # ---
 # jupyter:
 #   jupytext:
@@ -6,7 +7,7 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.4.0
+#       jupytext_version: 1.6.0
 #   kernelspec:
 #     display_name: Python 3
 #     language: python
@@ -17,32 +18,72 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import glob
+import re
 from os.path import isfile, join
 from itertools import combinations
 from itertools import combinations_with_replacement
 from itertools import permutations
 from itertools import product
+import scipy
+import scikits.bootstrap as bootstrap
+
+# + jupyter={"outputs_hidden": true}
+g = 'report/data/*.csv'
+filenames = glob.glob(g)
+filenames
+
+# +
+benchmarks = ['1', '2', '3', '4', '5', '6']
+flist = []
+for cores in range(1, 5):
+    prod = product(benchmarks, repeat=cores)
+    for p in prod:
+        bench = ''.join(p)
+        g = 'report/data/*.csv'.format(cores, bench)
+        filenames = glob.glob(g)
+        flist += filenames
+
+flist = list(set(flist))
+flist.sort()
+regex = re.compile(r'^.*cyclesdata-([^-]*).*$')
+for f in flist:
+    m = regex.match(f)
+    if m:
+        label = m.group(1)
+        df = pd.read_csv(f, sep=' ')
+        df = df[df['core'] == 0]
+        for offset in range(0, 11):
+            df_offset = df[df['offset'] == offset]
+            if len(df_offset.index) > 0:
+                maximum = df_offset['cycles'].max()
+                median = df_offset['cycles'].median()
+                print('Experiment:{}\tWCET:{:10.0f}\t\tMedian:{:10.0f}\tFactor:{:8.3f}\toffset:{}'.format(label, maximum, median, maximum/median, offset))
+# -
 
 infiles = glob.glob('output/*.csv')
 infiles
 
-benchmarks = ['malardalenbsort100',
-              'malardalenedn',
-              'lineararrayaccess',
-              'lineararraywrite',
-              'randomarrayaccess',
-              'randonarraywrite']
-
 # +
-pvs = pd.DataFrame()
-f='output/log-20200420_sbdatasizes.csv'
-#f='output/testlog.csv'
+f='output/experiments_Mälardalen_matmult_circle_pi4-2-cycles.csv'
+
 df = pd.read_csv(f, sep=',')
+df = df[(df['label'] == 'CIRCLE_PI4_BENCH_MÄLARDALEN_MATMULT_CORES4_WRITEATTACK1_INPUTSIZE80') |
+        (df['label'] == 'CIRCLE_PI4_BENCH_MÄLARDALEN_MATMULT_CORES4_WRITEATTACK1_INPUTSIZE100')]
+
+# Drop rows with 1 core and offset > 0
+df = df[(df['cores'] > 1) | (df['offset'] == 0)]
+# Drop rows with offset > 10
+df = df[df['offset'] <= 10]
+
+
 pv = pd.pivot_table(df,
-                    index=['label', 'cores', 'configuration', 'pattern'],
+                    index=['label', 'cores', 'config_series', 'config_benchmarks', 'offset'],
                     columns=['benchmark', 'core'],
                     values='cycles',
-                    aggfunc={'cycles': [np.median, np.std]})
+                    aggfunc={'cycles': [np.median,
+                                        np.mean,
+                                        np.std,
+                                        np.max]})
 pv = pv.rename(columns={0: 'core0',
                         1: 'core1',
                         2: 'core2',
@@ -53,7 +94,10 @@ pv.index.get_level_values(0) # cores
 pv.index.get_level_values(1) # configuration
 pv.index.get_level_values(2) # data assignment
 pv.index.get_level_values(3) # alignment pattern
-pv
+
+df_tmp = pv.loc[slice(None),
+                (slice(None), slice(None), ['core0'])]
+df_tmp
 
 # + jupyter={"outputs_hidden": true}
 df = pd.read_csv('output/log-20200309.csv')
