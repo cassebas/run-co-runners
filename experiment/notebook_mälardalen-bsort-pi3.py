@@ -18,12 +18,6 @@ import numpy as np
 from scipy.stats import ttest_ind
 from scipy.stats import mannwhitneyu
 import matplotlib.pyplot as plt
-import glob
-from itertools import combinations
-from itertools import combinations_with_replacement
-from itertools import permutations
-from itertools import product
-import re
 
 boxprops = dict(linestyle='-', linewidth=3, color='k')
 medianprops = dict(linestyle='-', linewidth=3, color='k')
@@ -42,8 +36,8 @@ labelsize = 32
 rcParams['xtick.labelsize'] = labelsize
 rcParams['ytick.labelsize'] = labelsize
 
-bsort1_2000 = pd.read_csv('report/data/cyclesdata-BENCH1_2000-1core-config1-pattern0.csv', sep=' ')
-bsort1444_2000 = pd.read_csv('report/data/cyclesdata-BENCH1444_2000-4core-config1444-pattern0000.csv', sep=' ')
+bsort1_2000 = pd.read_csv('hypothesis1/cyclesdata-BENCH1_2000-core1-configseries2-configbench1-offset0.csv', sep=' ')
+bsort1444_2000 = pd.read_csv('hypothesis1/cyclesdata-BENCH1444_2000-core4-configseries2111-configbench1222-offset0.csv', sep=' ')
 fig, ax = plt.subplots(1, 2, sharey=True, figsize=(12,12))
 xlab1 = ax[0].set_xlabel('run in isolation', fontsize=40, color='green')
 xlab2 = ax[1].set_xlabel('with co-runners', fontsize=40, color='red')
@@ -73,40 +67,13 @@ else:
     print('Based on the Mann-Whitney U test with stat={} and p={}, we cannot reject the Null-hypothesis'.format(stat, p))
 
 # +
-bsort1_6000 = pd.read_csv('report/data/cyclesdata-BENCH1_6000_STATIC-1core-config1-pattern0.csv', sep=' ')
-bsort1444_6000 = pd.read_csv('report/data/cyclesdata-BENCH1444_6000_STATIC-4core-config1444-pattern0000.csv', sep=' ')
-fig, ax = plt.subplots(1, 2, sharey=True, figsize=(10,10))
-maximum = [0, 0]
-for i, df in enumerate([bsort1_6000, bsort1444_6000]):
-    df = df.loc[df['core'] == 0]
-    maximum[i] = df['cycles'].max()
-    boxplot = df.boxplot(column=['cycles'], ax=ax[i], return_type='dict')
-    set_boxplot_linewidth(boxplot, linewidth=4)
-    
-print('The WCET of running 4 cores compared to 1 core is {} times slower'.format(maximum[1]/maximum[0]))
-# -
-
-# Calculate the student t-test
-a = bsort1_6000['cycles']
-b = bsort1444_6000.loc[bsort1444_6000['core'] == 0]['cycles']
-stat, p = mannwhitneyu(a, b)
-alpha = 0.05
-print('The calculated statistic is {}.'.format(stat))
-print('The calculated p-value is {}.'.format(p))
-if p < alpha:
-    # enough evidence to reject H0
-    print('Based on the Mann-Whitney U test with stat={} and p={}, we can reject the Null-hypothesis'.format(stat, p))
-else:
-    print('Based on the Mann-Whitney U test with stat={} and p={}, we cannot reject the Null-hypothesis'.format(stat, p))
-
-# +
 from matplotlib import rcParams
 labelsize = 32
 rcParams['xtick.labelsize'] = labelsize
 rcParams['ytick.labelsize'] = labelsize
 
-bsort1_8000 = pd.read_csv('report/data/cyclesdata-BENCH1_8000-1core-config1-pattern0.csv', sep=' ')
-bsort1444_8000 = pd.read_csv('report/data/cyclesdata-BENCH1444_8000-4core-config1444-pattern0000.csv', sep=' ')
+bsort1_8000 = pd.read_csv('hypothesis1/cyclesdata-BENCH1_8000-core1-configseries2-configbench1-offset0.csv', sep=' ')
+bsort1444_8000 = pd.read_csv('hypothesis1/cyclesdata-BENCH1444_8000-core4-configseries2111-configbench1222-offset0.csv', sep=' ')
 fig, ax = plt.subplots(1, 2, sharey=True, figsize=(10,8))
 xlab1 = ax[0].set_xlabel('run in isolation  ', fontsize=40, color='green')
 xlab2 = ax[1].set_xlabel('   with co-runners', fontsize=40, color='red')
