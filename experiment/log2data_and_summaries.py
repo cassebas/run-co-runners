@@ -39,7 +39,7 @@ def export_dataframe(df, output_mode, metric, axis0, axis1, output_directory):
             config_bench = remove_quotes(config_bench)
 
             output_filename = '{}{}-{}-'.format(metric, output_mode, label)
-            output_filename += 'core{}-'.format(cores)
+            output_filename += 'cores{}-'.format(cores)
             output_filename += 'configseries{}-'.format(config_series)
             output_filename += 'configbench{}'.format(config_bench)
 

@@ -275,7 +275,7 @@ def get_experiment_results(exp_labels, exp_data, data_dir):
                     # table). The data file is obtained from data_dir
                     try:
                         infile = '{}{}-{}-'.format('cycles', 'data', label)
-                        infile += 'core{}-'.format(cores)
+                        infile += 'cores{}-'.format(cores)
                         infile += 'configseries{}-'.format(config_series)
                         infile += 'configbench{}'.format(config_bench)
                         infile += '-{}{}.csv'.format('offset', offset)
