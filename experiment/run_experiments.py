@@ -128,6 +128,10 @@ class Compile:
             logger.debug('enable_screen={}'.format(enable_screen))
             enable_screen_param = '-Dscreen_enable'
             arg_m4_list.append(enable_screen_param)
+        if delay_step is not None:
+            logger.debug('delay_step={}'.format(delay_step))
+            delay_step_param = '-Ddelay_step={}'.format(delay_step)
+            arg_m4_list.append(delay_step_param)
 
         if inputsizes is not None:
             # if inputsizes is not None, it must be a tuple of four
