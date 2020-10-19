@@ -18,9 +18,13 @@ benchmark_list = [
      'random array access',
      'random array write'],
     ['malardalen bsort100',
-     'malardalen edn',
-     'malardalen matmult'],
-    ['sd-vbs disparity']]
+     'malardalen ns',
+     'malardalen matmult',
+     'fir'],
+    ['sd-vbs disparity',
+     'sd-vbs mser',
+     'sd-vbs svm',
+     'sd-vbs stitch']]
 
 
 pmu_event_names = {

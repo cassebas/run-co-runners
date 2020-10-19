@@ -130,7 +130,7 @@ class Compile:
             arg_m4_list.append(enable_screen_param)
         if delay_step is not None:
             logger.debug('delay_step={}'.format(delay_step))
-            delay_step_param = '-Ddelay_step={}'.format(delay_step)
+            delay_step_param = '-Ddelay_step_countdown={}'.format(delay_step)
             arg_m4_list.append(delay_step_param)
 
         if inputsizes is not None:

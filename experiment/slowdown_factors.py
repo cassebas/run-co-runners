@@ -27,9 +27,13 @@ benchmark_list = [
      'random array access',
      'random array write'],
     ['malardalen bsort100',
-     'malardalen edn',
-     'malardalen matmult'],
-    ['sd-vbs disparity']]
+     'malardalen ns',
+     'malardalen matmult',
+     'fir'],
+    ['sd-vbs disparity',
+     'sd-vbs mser',
+     'sd-vbs svm',
+     'sd-vbs stitch']]
 
 
 logger = logging.getLogger(__name__)
@@ -209,7 +213,7 @@ def get_experiment_data(csv_dir, csv_file_prefix):
         # Drop rows with 1 core and offset > 0
         df = df[(df['cores'] > 1) | (df['offset'] == 0)]
         # Drop rows with offset > 10
-        df = df[df['offset'] <= 10]
+        # NO: do NOT drop these! df = df[df['offset'] <= 10]
 
         df_pivot = pd.pivot_table(df,
                                   index=['label', 'cores',

@@ -36,6 +36,7 @@ def create_bar_plot(df, title):
     plt.title(title)
 
 
+# + jupyter={"outputs_hidden": true}
 g = 'report/data/*.csv'
 filenames = glob.glob(g)
 flist = list(set(filenames))
@@ -53,10 +54,10 @@ for f in flist:
                 maximum = df_offset['cycles'].max()
                 median = df_offset['cycles'].median()
                 print('Experiment:{}\tWCET:{:10.0f}\t\tMedian:{:10.0f}\tFactor:{:8.3f}\toffset:{}'.format(label, maximum, median, maximum/median, offset))
+# -
 
 # ## SD-VBS disparity --- 1 core
 
-# + jupyter={"source_hidden": true}
 f='slowdown-factors-sdvbsdisparity-pi4.csv'
 df = pd.read_csv(f, sep=' ')
 # Show overview of the experiments with one label
@@ -64,7 +65,6 @@ df = df[df['cores'] == 1]
 # Drop one of the labels, for 1 core both labels are the same
 df = df.drop(labels=['cores', 'label1core', 'mean1core', 'offset', 'slowdown', 'slowdown_wcet', 'wcet1core'], axis=1)
 df
-# -
 
 # ## SD-VBS disparity --- multiple cores
 
@@ -81,6 +81,7 @@ df_slowdown
 # ## Inputsize 32, 4 cores
 
 df32 = df_slowdown[df_slowdown['inputsize'] == 32]
+df32 = df32[df32['cores'] == 4]
 create_bar_plot(df32, 'SD-VBS disparity on core 0 and linear array write on cores 1,2,3 --- inputsize 32')
 df32
 
