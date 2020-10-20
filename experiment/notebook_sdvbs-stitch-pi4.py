@@ -22,7 +22,7 @@ import re
 
 
 def create_bar_plot(df, title, ylim):
-    fig, ax = plt.subplots(1,1, figsize=(15,8))
+    fig, ax = plt.subplots(1,1, figsize=(15,6))
     ax.bar(df['offset'], df['slowdown'], color='red', edgecolor='black', label='Slowdown', alpha=0.5, width=0.75, yerr=(df['slowdown']-df['slowdown_lo']), capsize=5)
     ax.set_xlabel('offset', fontsize=24)
     ax.set_ylabel('slowdown factor', fontsize=24)

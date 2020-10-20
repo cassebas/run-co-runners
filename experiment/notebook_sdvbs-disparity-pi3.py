@@ -104,7 +104,7 @@ df160 = df_slowdown[df_slowdown['inputsize'] == 160]
 create_bar_plot(df160, 'SD-VBS disparity on core 0 and linear array write on cores 1,2,3 --- inputsize 160')
 df160
 
-# ## Inputsize 196, 4 cores
+# ## Inputsize 192, 4 cores
 
 df192 = df_slowdown[df_slowdown['inputsize'] == 192]
 create_bar_plot(df192, 'SD-VBS disparity on core 0 and linear array write on cores 1,2,3 --- inputsize 192')
@@ -621,3 +621,69 @@ autolabel(ax, bars2)
 
 fig.suptitle('Disparity benchmark Write attacks')
 fig.tight_layout(rect=[0, 0.03, 1, 0.95])
+
+
+# -
+
+# # Events for disparity
+
+def print_events(events_file):
+    l2_access = '0x16'
+    l2_refill = '0x17'
+    bus_access = '0x19'
+    bus_cycles = '0x1d'
+
+    events = pd.read_csv(events_file, sep=' ')
+
+    # Remove other co-runners
+    events = events[events['core'] == 0]
+
+    # some events were counted as zero, which is suspicious: remove them
+    events = events[events['eventcount'] > 0]
+
+    cache_access_df = events[events['eventtype'] == l2_access]
+    cache_access = cache_access_df['eventcount'].median()
+
+    cache_refill_df = events[events['eventtype'] == l2_refill]
+    cache_refill = cache_refill_df['eventcount'].median()
+
+    bus_access_df = events[events['eventtype'] == bus_access]
+    bus_access = bus_access_df['eventcount'].median()
+
+    bus_cycles_df = events[events['eventtype'] == bus_cycles]
+    bus_cycles = bus_cycles_df['eventcount'].median()
+
+    print(f'cache access:{cache_access}  cache refill:{cache_refill}  bus access:{bus_access}  bus cycles:{bus_cycles}')
+
+
+# ## Disparity with 1 core --- inputsize 32
+
+events_file = 'report/data/eventsdata-XRTOS_PI3_BENCH_DISPARITY_CORES1_INPUTSIZE32-cores1-configseries3-configbench1-offset0.csv'
+print_events(events_file)
+
+# ## Disparity with 1 core --- inputsize 96
+
+events_file = 'report/data/eventsdata-XRTOS_PI3_BENCH_DISPARITY_CORES1_INPUTSIZE96-cores1-configseries3-configbench1-offset0.csv'
+print_events(events_file)
+
+# ## Disparity with 1 core --- inputsize 192
+
+events_file = 'report/data/eventsdata-XRTOS_PI3_BENCH_DISPARITY_CORES1_INPUTSIZE192-cores1-configseries3-configbench1-offset0.csv'
+print_events(events_file)
+
+# ## Disparity with 4 cores --- inputsize 32
+
+events_file = 'report/data/eventsdata-XRTOS_PI3_BENCH_DISPARITY_CORES4_WRITEATTACK1_INPUTSIZE32-cores4-configseries3111-configbench1222-offset0.csv'
+print_events(events_file)
+
+# ## Disparity with 4 cores --- inputsize 96
+
+events_file = 'report/data/eventsdata-XRTOS_PI3_BENCH_DISPARITY_CORES4_WRITEATTACK1_INPUTSIZE96-cores4-configseries3111-configbench1222-offset0.csv'
+print_events(events_file)
+
+# ## Disparity with 4 cores --- inputsize 192
+
+events_file = 'report/data/eventsdata-XRTOS_PI3_BENCH_DISPARITY_CORES4_WRITEATTACK1_INPUTSIZE192-cores4-configseries3111-configbench1222-offset0.csv'
+print_events(events_file)
+
+

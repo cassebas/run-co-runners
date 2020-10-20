@@ -22,7 +22,7 @@ import re
 
 
 def create_bar_plot(df, title, ylim):
-    fig, ax = plt.subplots(1,1, figsize=(15,8))
+    fig, ax = plt.subplots(1,1, figsize=(15,6))
     ax.bar(df['offset'], df['slowdown'], color='red', edgecolor='black', label='Slowdown', alpha=0.5, width=0.75, yerr=(df['slowdown']-df['slowdown_lo']), capsize=5)
     ax.set_xlabel('offset', fontsize=24)
     ax.set_ylabel('slowdown factor', fontsize=24)
@@ -137,7 +137,7 @@ df100_4
 
 # +
 index = np.arange(11)
-fig, ax = plt.subplots(1, 1, sharey=True, figsize=(15,10))
+fig, ax = plt.subplots(1, 1, sharey=True, figsize=(16,6))
 barwidth = 0.3
 
 bars1 = ax.bar(df100_2['offset']-barwidth, df100_2['slowdown'], label='Slowdown for 2 cores: 1 task, 1 co-runner',
