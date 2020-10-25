@@ -1,0 +1,101 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2020.06.14 17:10:05 =~=~=~=~=~=~=~=~=~=~=~=
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20974668 iteration: 1 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21093432 iteration: 2 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20880835 iteration: 3 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21008392 iteration: 4 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21077860 iteration: 5 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20950460 iteration: 6 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20883195 iteration: 7 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21013913 iteration: 8 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20838750 iteration: 9 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20994351 iteration: 10 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21084422 iteration: 11 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21033191 iteration: 12 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21014399 iteration: 13 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20918521 iteration: 14 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21015035 iteration: 15 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21088951 iteration: 16 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20983221 iteration: 17 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21008199 iteration: 18 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20984223 iteration: 19 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20828279 iteration: 20 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20912878 iteration: 21 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21073509 iteration: 22 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21042875 iteration: 23 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20947193 iteration: 24 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21124032 iteration: 25 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20826950 iteration: 26 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21015644 iteration: 27 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21018346 iteration: 28 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21033825 iteration: 29 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20971729 iteration: 30 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21044720 iteration: 31 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21056962 iteration: 32 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21036518 iteration: 33 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20893037 iteration: 34 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20850534 iteration: 35 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21014171 iteration: 36 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20959057 iteration: 37 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21002567 iteration: 38 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20898386 iteration: 39 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20855378 iteration: 40 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20958980 iteration: 41 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20893198 iteration: 42 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21058817 iteration: 43 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21021183 iteration: 44 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20996405 iteration: 45 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20911398 iteration: 46 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20933938 iteration: 47 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20989154 iteration: 48 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20980847 iteration: 49 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20955301 iteration: 50 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20872158 iteration: 51 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20938764 iteration: 52 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21154402 iteration: 53 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20837682 iteration: 54 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21078360 iteration: 55 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20926563 iteration: 56 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21052118 iteration: 57 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21010873 iteration: 58 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20863902 iteration: 59 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20928346 iteration: 60 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20830278 iteration: 61 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20983452 iteration: 62 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20914862 iteration: 63 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21262642 iteration: 64 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20918420 iteration: 65 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21017791 iteration: 66 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20972958 iteration: 67 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21085142 iteration: 68 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20985463 iteration: 69 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20908135 iteration: 70 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20971935 iteration: 71 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20835686 iteration: 72 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20942558 iteration: 73 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21023874 iteration: 74 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21033401 iteration: 75 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21133224 iteration: 76 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21094285 iteration: 77 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20944315 iteration: 78 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21221119 iteration: 79 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21162431 iteration: 80 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21201755 iteration: 81 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21099739 iteration: 82 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20952049 iteration: 83 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20821079 iteration: 84 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20882277 iteration: 85 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21133124 iteration: 86 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20903111 iteration: 87 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21020728 iteration: 88 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20958193 iteration: 89 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20936871 iteration: 90 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20943720 iteration: 91 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20876928 iteration: 92 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21047750 iteration: 93 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20867220 iteration: 94 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21107238 iteration: 95 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20936493 iteration: 96 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20990592 iteration: 97 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21075940 iteration: 98 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     20952703 iteration: 99 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1_2000 config_series: '2' config_benchmarks: '1' benchmark: malardalen_bsort100 cores: 1 core: 0 cycle_count:     21102153 iteration: 100 offset: 0

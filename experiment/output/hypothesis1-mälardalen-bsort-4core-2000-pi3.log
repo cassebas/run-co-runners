@@ -1,0 +1,401 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2020.06.14 17:11:23 =~=~=~=~=~=~=~=~=~=~=~=
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20986644 iteration: 1 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246017593 iteration: 1 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249504565 iteration: 1 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246204810 iteration: 1 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21099359 iteration: 2 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246252242 iteration: 2 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245961350 iteration: 2 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249510788 iteration: 2 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20885634 iteration: 3 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245614640 iteration: 3 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246100778 iteration: 3 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249631022 iteration: 3 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21013512 iteration: 4 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245874276 iteration: 4 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249698145 iteration: 4 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246323910 iteration: 4 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21083899 iteration: 5 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245861409 iteration: 5 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249354554 iteration: 5 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245700204 iteration: 5 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20961416 iteration: 6 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    242918418 iteration: 6 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    244491971 iteration: 6 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    247783318 iteration: 6 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20886974 iteration: 7 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246198755 iteration: 7 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249686583 iteration: 7 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246386374 iteration: 7 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21017869 iteration: 8 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245988589 iteration: 8 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249500034 iteration: 8 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246008289 iteration: 8 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20844127 iteration: 9 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245352379 iteration: 9 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249642087 iteration: 9 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246485610 iteration: 9 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20997638 iteration: 10 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245698456 iteration: 10 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246153143 iteration: 10 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249314312 iteration: 10 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21093101 iteration: 11 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246177722 iteration: 11 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249817853 iteration: 11 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246473802 iteration: 11 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21072580 iteration: 12 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245774352 iteration: 12 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246214666 iteration: 12 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249394924 iteration: 12 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21022583 iteration: 13 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246370378 iteration: 13 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249706009 iteration: 13 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246425578 iteration: 13 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20922828 iteration: 14 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246196799 iteration: 14 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249758061 iteration: 14 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246516919 iteration: 14 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21017469 iteration: 15 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245791985 iteration: 15 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246242139 iteration: 15 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249454141 iteration: 15 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21100115 iteration: 16 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245895313 iteration: 16 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246403378 iteration: 16 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249738703 iteration: 16 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20987456 iteration: 17 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245963362 iteration: 17 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246745254 iteration: 17 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249796704 iteration: 17 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21017308 iteration: 18 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245983778 iteration: 18 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249541217 iteration: 18 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246447030 iteration: 18 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20989927 iteration: 19 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246198039 iteration: 19 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249706776 iteration: 19 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246251204 iteration: 19 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20850919 iteration: 20 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245644196 iteration: 20 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246067783 iteration: 20 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249350272 iteration: 20 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20925369 iteration: 21 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246283676 iteration: 21 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249607577 iteration: 21 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246248278 iteration: 21 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21081834 iteration: 22 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245042280 iteration: 22 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245890328 iteration: 22 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249336150 iteration: 22 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21063249 iteration: 23 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245263168 iteration: 23 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    247635051 iteration: 23 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245331072 iteration: 23 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20951024 iteration: 24 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245940535 iteration: 24 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246922216 iteration: 24 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    250067426 iteration: 24 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21130547 iteration: 25 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    244704603 iteration: 25 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    247419824 iteration: 25 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245178783 iteration: 25 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20830977 iteration: 26 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245547589 iteration: 26 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246305936 iteration: 26 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249452064 iteration: 26 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21020107 iteration: 27 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245780285 iteration: 27 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249573623 iteration: 27 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246235209 iteration: 27 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21037750 iteration: 28 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245765146 iteration: 28 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249443624 iteration: 28 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246095853 iteration: 28 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21044110 iteration: 29 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246156644 iteration: 29 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249660576 iteration: 29 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246145701 iteration: 29 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20983838 iteration: 30 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245488727 iteration: 30 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249637686 iteration: 30 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246631155 iteration: 30 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21050334 iteration: 31 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245985502 iteration: 31 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249569845 iteration: 31 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245947066 iteration: 31 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21061668 iteration: 32 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245796325 iteration: 32 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246551494 iteration: 32 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249675911 iteration: 32 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21044265 iteration: 33 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245802565 iteration: 33 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246244548 iteration: 33 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249567011 iteration: 33 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20897306 iteration: 34 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    241895361 iteration: 34 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    247816117 iteration: 34 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    244744029 iteration: 34 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20876818 iteration: 35 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    244886817 iteration: 35 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249693143 iteration: 35 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245421076 iteration: 35 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21016598 iteration: 36 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246639870 iteration: 36 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249934012 iteration: 36 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246614371 iteration: 36 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20962782 iteration: 37 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245545101 iteration: 37 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249636800 iteration: 37 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246139784 iteration: 37 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21006105 iteration: 38 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246049571 iteration: 38 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245856933 iteration: 38 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249424302 iteration: 38 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20915341 iteration: 39 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246450193 iteration: 39 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246600980 iteration: 39 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249977448 iteration: 39 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20859468 iteration: 40 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245942635 iteration: 40 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246509625 iteration: 40 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249584840 iteration: 40 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20962299 iteration: 41 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246082845 iteration: 41 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246098157 iteration: 41 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249525182 iteration: 41 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20898221 iteration: 42 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245979444 iteration: 42 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246378167 iteration: 42 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249700901 iteration: 42 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21063563 iteration: 43 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246138501 iteration: 43 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249781025 iteration: 43 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246518614 iteration: 43 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21024607 iteration: 44 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246092950 iteration: 44 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246715520 iteration: 44 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249795699 iteration: 44 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21012371 iteration: 45 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245673874 iteration: 45 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245924293 iteration: 45 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249423418 iteration: 45 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20916554 iteration: 46 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246272285 iteration: 46 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249975697 iteration: 46 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246535940 iteration: 46 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20939827 iteration: 47 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245816322 iteration: 47 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246212657 iteration: 47 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249407889 iteration: 47 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20993075 iteration: 48 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245603885 iteration: 48 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249531675 iteration: 48 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246277273 iteration: 48 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20991134 iteration: 49 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245641814 iteration: 49 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249227050 iteration: 49 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245958704 iteration: 49 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20959815 iteration: 50 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246089676 iteration: 50 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249744874 iteration: 50 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246446348 iteration: 50 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20881907 iteration: 51 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245495046 iteration: 51 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245887642 iteration: 51 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249096932 iteration: 51 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20987318 iteration: 52 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245718276 iteration: 52 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249511528 iteration: 52 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246031870 iteration: 52 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21160029 iteration: 53 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246051625 iteration: 53 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249522455 iteration: 53 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246052867 iteration: 53 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20926077 iteration: 54 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245037976 iteration: 54 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246153210 iteration: 54 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249532301 iteration: 54 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21081489 iteration: 55 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245371375 iteration: 55 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249479735 iteration: 55 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246159883 iteration: 55 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20929898 iteration: 56 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246061141 iteration: 56 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249589502 iteration: 56 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246315491 iteration: 56 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21061438 iteration: 57 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245929757 iteration: 57 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246097131 iteration: 57 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249448220 iteration: 57 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21015866 iteration: 58 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245923212 iteration: 58 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246286057 iteration: 58 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249556953 iteration: 58 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20870681 iteration: 59 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245937786 iteration: 59 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246684570 iteration: 59 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249959192 iteration: 59 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20931608 iteration: 60 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245902600 iteration: 60 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246623900 iteration: 60 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249851851 iteration: 60 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20832818 iteration: 61 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246002676 iteration: 61 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249894601 iteration: 61 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246593561 iteration: 61 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20987213 iteration: 62 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245899104 iteration: 62 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246215043 iteration: 62 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249695828 iteration: 62 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20917974 iteration: 63 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245711344 iteration: 63 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246576820 iteration: 63 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249663969 iteration: 63 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21269816 iteration: 64 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246043324 iteration: 64 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246536706 iteration: 64 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249855142 iteration: 64 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20946108 iteration: 65 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246046579 iteration: 65 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249677913 iteration: 65 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246286122 iteration: 65 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21029522 iteration: 66 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246021255 iteration: 66 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249613406 iteration: 66 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246095319 iteration: 66 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20978164 iteration: 67 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245960577 iteration: 67 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246546056 iteration: 67 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249745414 iteration: 67 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21089897 iteration: 68 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245708252 iteration: 68 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249569002 iteration: 68 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246302650 iteration: 68 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20988770 iteration: 69 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245575806 iteration: 69 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246196623 iteration: 69 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249589802 iteration: 69 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20912246 iteration: 70 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245739954 iteration: 70 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249440461 iteration: 70 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246272169 iteration: 70 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20975143 iteration: 71 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245019875 iteration: 71 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245560710 iteration: 71 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249916970 iteration: 71 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20839880 iteration: 72 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246096384 iteration: 72 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249949395 iteration: 72 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246545514 iteration: 72 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20946189 iteration: 73 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245475054 iteration: 73 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249382054 iteration: 73 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246183453 iteration: 73 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21027390 iteration: 74 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245955521 iteration: 74 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245913974 iteration: 74 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249411924 iteration: 74 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21037570 iteration: 75 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245961219 iteration: 75 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246694552 iteration: 75 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249800852 iteration: 75 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21150935 iteration: 76 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245350110 iteration: 76 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    247856099 iteration: 76 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245792161 iteration: 76 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21101247 iteration: 77 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245884588 iteration: 77 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246175949 iteration: 77 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249549529 iteration: 77 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20947599 iteration: 78 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246320635 iteration: 78 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246428212 iteration: 78 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249666639 iteration: 78 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21232692 iteration: 79 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    241820787 iteration: 79 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    247754322 iteration: 79 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    244521650 iteration: 79 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21165312 iteration: 80 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245844447 iteration: 80 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246165095 iteration: 80 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249452298 iteration: 80 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21205389 iteration: 81 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246001447 iteration: 81 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246433776 iteration: 81 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249612834 iteration: 81 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21107536 iteration: 82 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245680193 iteration: 82 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246350255 iteration: 82 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249471730 iteration: 82 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20955930 iteration: 83 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246026432 iteration: 83 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249668619 iteration: 83 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246217204 iteration: 83 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20826057 iteration: 84 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246074162 iteration: 84 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246605078 iteration: 84 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249964209 iteration: 84 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20886039 iteration: 85 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245805934 iteration: 85 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246177851 iteration: 85 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249577603 iteration: 85 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21136643 iteration: 86 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    244636122 iteration: 86 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245275533 iteration: 86 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    247400045 iteration: 86 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20907643 iteration: 87 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245755681 iteration: 87 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246169213 iteration: 87 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249645658 iteration: 87 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21036086 iteration: 88 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246036529 iteration: 88 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249789577 iteration: 88 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246489228 iteration: 88 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20963470 iteration: 89 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245369227 iteration: 89 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249116850 iteration: 89 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245830371 iteration: 89 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20944759 iteration: 90 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245273531 iteration: 90 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245967143 iteration: 90 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    250171790 iteration: 90 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20947218 iteration: 91 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245712479 iteration: 91 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249629899 iteration: 91 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246277371 iteration: 91 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20878654 iteration: 92 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246221502 iteration: 92 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246487599 iteration: 92 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249742202 iteration: 92 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21062209 iteration: 93 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245466374 iteration: 93 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    247907073 iteration: 93 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245810069 iteration: 93 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20872225 iteration: 94 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245525426 iteration: 94 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    245905436 iteration: 94 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249287843 iteration: 94 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21112026 iteration: 95 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245857508 iteration: 95 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249768893 iteration: 95 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246453060 iteration: 95 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20939220 iteration: 96 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246116610 iteration: 96 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246478169 iteration: 96 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249597013 iteration: 96 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20999310 iteration: 97 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246337639 iteration: 97 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249868755 iteration: 97 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246434184 iteration: 97 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21089125 iteration: 98 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246087494 iteration: 98 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249621938 iteration: 98 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    246188116 iteration: 98 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     20973801 iteration: 99 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    245734531 iteration: 99 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    249515573 iteration: 99 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    246323816 iteration: 99 offset: 0
+INFO: core0(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: malardalen_bsort100 cores: 4 core: 0 cycle_count:     21103373 iteration: 100 offset: 0
+INFO: core1(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 1 cycle_count:    241822471 iteration: 100 offset: 0
+INFO: core3(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 3 cycle_count:    244503812 iteration: 100 offset: 0
+INFO: core2(): CYCLECOUNT label: BENCH1444_2000 config_series: '2111' config_benchmarks: '1222' benchmark: linear_array_write cores: 4 core: 2 cycle_count:    247710697 iteration: 100 offset: 0
