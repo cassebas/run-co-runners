@@ -187,106 +187,106 @@ cores = range(1,5)
 attacks = ['readattack linear', 'readattack random', 'writeattack linear', 'writeattack random']
 disparity32lst = [
     [1, 
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK1_INPUTSIZE32', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK1_INPUTSIZE32', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK1_INPUTSIZE32', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK1_INPUTSIZE32', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK1_INPUTSIZE32', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK1_INPUTSIZE32', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK2_INPUTSIZE32', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK2_INPUTSIZE32', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK2_INPUTSIZE32', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK2_INPUTSIZE32', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK2_INPUTSIZE32', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK2_INPUTSIZE32', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK1_INPUTSIZE32', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK1_INPUTSIZE32', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK1_INPUTSIZE32', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK1_INPUTSIZE32', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK1_INPUTSIZE32', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK1_INPUTSIZE32', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK2_INPUTSIZE32', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK2_INPUTSIZE32', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK2_INPUTSIZE32', 'slowdown']]]
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK2_INPUTSIZE32', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK2_INPUTSIZE32', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK2_INPUTSIZE32', 'slowdown_wcet']]]
 disparity64lst = [
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK1_INPUTSIZE64', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK1_INPUTSIZE64', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK1_INPUTSIZE64', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK1_INPUTSIZE64', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK1_INPUTSIZE64', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK1_INPUTSIZE64', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK2_INPUTSIZE64', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK2_INPUTSIZE64', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK2_INPUTSIZE64', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK2_INPUTSIZE64', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK2_INPUTSIZE64', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK2_INPUTSIZE64', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK1_INPUTSIZE64', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK1_INPUTSIZE64', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK1_INPUTSIZE64', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK1_INPUTSIZE64', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK1_INPUTSIZE64', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK1_INPUTSIZE64', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK2_INPUTSIZE64', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK2_INPUTSIZE64', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK2_INPUTSIZE64', 'slowdown']]]
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK2_INPUTSIZE64', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK2_INPUTSIZE64', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK2_INPUTSIZE64', 'slowdown_wcet']]]
 disparity96lst = [
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK1_INPUTSIZE96', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK1_INPUTSIZE96', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK1_INPUTSIZE96', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK1_INPUTSIZE96', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK1_INPUTSIZE96', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK1_INPUTSIZE96', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK2_INPUTSIZE96', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK2_INPUTSIZE96', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK2_INPUTSIZE96', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK2_INPUTSIZE96', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK2_INPUTSIZE96', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK2_INPUTSIZE96', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK1_INPUTSIZE96', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK1_INPUTSIZE96', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK1_INPUTSIZE96', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK1_INPUTSIZE96', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK1_INPUTSIZE96', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK1_INPUTSIZE96', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK2_INPUTSIZE96', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK2_INPUTSIZE96', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK2_INPUTSIZE96', 'slowdown']]]
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK2_INPUTSIZE96', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK2_INPUTSIZE96', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK2_INPUTSIZE96', 'slowdown_wcet']]]
 disparity128lst = [
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK1_INPUTSIZE128', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK1_INPUTSIZE128', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK1_INPUTSIZE128', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK1_INPUTSIZE128', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK1_INPUTSIZE128', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK1_INPUTSIZE128', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK2_INPUTSIZE128', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK2_INPUTSIZE128', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK2_INPUTSIZE128', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK2_INPUTSIZE128', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK2_INPUTSIZE128', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK2_INPUTSIZE128', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK1_INPUTSIZE128', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK1_INPUTSIZE128', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK1_INPUTSIZE128', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK1_INPUTSIZE128', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK1_INPUTSIZE128', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK1_INPUTSIZE128', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK2_INPUTSIZE128', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK2_INPUTSIZE128', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK2_INPUTSIZE128', 'slowdown']]]
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK2_INPUTSIZE128', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK2_INPUTSIZE128', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK2_INPUTSIZE128', 'slowdown_wcet']]]
 disparity160lst = [
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK1_INPUTSIZE160', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK1_INPUTSIZE160', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK1_INPUTSIZE160', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK1_INPUTSIZE160', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK1_INPUTSIZE160', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK1_INPUTSIZE160', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK2_INPUTSIZE160', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK2_INPUTSIZE160', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK2_INPUTSIZE160', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK2_INPUTSIZE160', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK2_INPUTSIZE160', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK2_INPUTSIZE160', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK1_INPUTSIZE160', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK1_INPUTSIZE160', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK1_INPUTSIZE160', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK1_INPUTSIZE160', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK1_INPUTSIZE160', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK1_INPUTSIZE160', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK2_INPUTSIZE160', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK2_INPUTSIZE160', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK2_INPUTSIZE160', 'slowdown']]]
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK2_INPUTSIZE160', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK2_INPUTSIZE160', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK2_INPUTSIZE160', 'slowdown_wcet']]]
 disparity192lst = [
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK1_INPUTSIZE192', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK1_INPUTSIZE192', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK1_INPUTSIZE192', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK1_INPUTSIZE192', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK1_INPUTSIZE192', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK1_INPUTSIZE192', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK2_INPUTSIZE192', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK2_INPUTSIZE192', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK2_INPUTSIZE192', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_READATTACK2_INPUTSIZE192', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_READATTACK2_INPUTSIZE192', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_READATTACK2_INPUTSIZE192', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK1_INPUTSIZE192', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK1_INPUTSIZE192', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK1_INPUTSIZE192', 'slowdown']],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK1_INPUTSIZE192', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK1_INPUTSIZE192', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK1_INPUTSIZE192', 'slowdown_wcet']],
     [1,
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK2_INPUTSIZE192', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK2_INPUTSIZE192', 'slowdown'],
-     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK2_INPUTSIZE192', 'slowdown']]]
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES2_64MB_WRITEATTACK2_INPUTSIZE192', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES3_64MB_WRITEATTACK2_INPUTSIZE192', 'slowdown_wcet'],
+     df_slowdown0.loc['CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK2_INPUTSIZE192', 'slowdown_wcet']]]
 
 disparity32 = pd.DataFrame(disparity32lst)
 disparity32 = disparity32.transpose()
@@ -501,7 +501,7 @@ mem_sizes = ['32x32', '64x64', '96x96', '128x128', '160x160', '192x192']
 index = np.arange(len(mem_sizes))
 width = 0.3
 
-fig, ax = plt.subplots(1, 1, sharey=True, figsize=(15,6))
+fig, ax = plt.subplots(1, 1, sharey=True, figsize=(15,7))
 slowdown = []
 for i in range(2, 5):
     slowdown.append([disparity32.loc[i, attacks[2]],
@@ -648,16 +648,16 @@ def print_events(events_file):
     events = events[events['eventcount'] > 0]
 
     cache_access_df = events[events['eventtype'] == l2_access]
-    cache_access = cache_access_df['eventcount'].median()
+    cache_access = cache_access_df['eventcount'].max()
 
     cache_refill_df = events[events['eventtype'] == l2_refill]
-    cache_refill = cache_refill_df['eventcount'].median()
+    cache_refill = cache_refill_df['eventcount'].max()
 
     bus_access_df = events[events['eventtype'] == bus_access]
-    bus_access = bus_access_df['eventcount'].median()
+    bus_access = bus_access_df['eventcount'].max()
 
     bus_cycles_df = events[events['eventtype'] == bus_cycles]
-    bus_cycles = bus_cycles_df['eventcount'].median()
+    bus_cycles = bus_cycles_df['eventcount'].max()
 
     print(f'cache access:{cache_access}  cache refill:{cache_refill}  bus access:{bus_access}  bus cycles:{bus_cycles}')
 

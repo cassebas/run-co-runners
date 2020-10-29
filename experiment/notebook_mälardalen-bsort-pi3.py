@@ -38,17 +38,25 @@ rcParams['ytick.labelsize'] = labelsize
 
 bsort1_2000 = pd.read_csv('hypothesis1/cyclesdata-BENCH1_2000-core1-configseries2-configbench1-offset0.csv', sep=' ')
 bsort1444_2000 = pd.read_csv('hypothesis1/cyclesdata-BENCH1444_2000-core4-configseries2111-configbench1222-offset0.csv', sep=' ')
-fig, ax = plt.subplots(1, 2, sharey=True, figsize=(12,12))
-xlab1 = ax[0].set_xlabel('run in isolation', fontsize=40, color='green')
-xlab2 = ax[1].set_xlabel('with co-runners', fontsize=40, color='red')
+fig, ax = plt.subplots(1, 2, sharey=True, figsize=(10,10))
+xlab1 = ax[0].set_xlabel('run in isolation', fontsize=32, color='green')
+xlab2 = ax[1].set_xlabel('with co-runners', fontsize=32, color='red')
 maximum = [0, 0]
+median = [0, 0]
 for i, df in enumerate([bsort1_2000, bsort1444_2000]):
     df = df.loc[df['core'] == 0]
     maximum[i] = df['cycles'].max()
+    median[i] = df['cycles'].median()
     boxplot = df.boxplot(column=['cycles'], ax=ax[i], return_type='dict')
     set_boxplot_linewidth(boxplot, linewidth=4)
 
-plt.savefig('/home/caspar/git/RTS-thesis/talks/midterm-20200701/img/bsort2000-boxplot.png', bbox_inches='tight')
+plt.savefig('/home/caspar/git/RTS-thesis/report/img/bsort2000-boxplot.png', bbox_inches='tight')
+print(f'Median 1 core is {median[0]}')
+print(f'Median 4 cores is {median[1]}')
+print(f'WCET 1 core is {maximum[0]}')
+print(f'WCET 4 cores is {maximum[1]}')
+
+print('The median of running 4 cores compared to 1 core is {} times slower'.format(median[1]/median[0]))
 print('The WCET of running 4 cores compared to 1 core is {} times slower'.format(maximum[1]/maximum[0]))
 # -
 
@@ -74,18 +82,27 @@ rcParams['ytick.labelsize'] = labelsize
 
 bsort1_8000 = pd.read_csv('hypothesis1/cyclesdata-BENCH1_8000-core1-configseries2-configbench1-offset0.csv', sep=' ')
 bsort1444_8000 = pd.read_csv('hypothesis1/cyclesdata-BENCH1444_8000-core4-configseries2111-configbench1222-offset0.csv', sep=' ')
-fig, ax = plt.subplots(1, 2, sharey=True, figsize=(10,8))
-xlab1 = ax[0].set_xlabel('run in isolation  ', fontsize=40, color='green')
-xlab2 = ax[1].set_xlabel('   with co-runners', fontsize=40, color='red')
-max = [0, 0]
+fig, ax = plt.subplots(1, 2, sharey=True, figsize=(10,10))
+xlab1 = ax[0].set_xlabel('run in isolation  ', fontsize=32, color='green')
+xlab2 = ax[1].set_xlabel('   with co-runners', fontsize=32, color='red')
+maximum = [0, 0]
+median = [0, 0]
 for i, df in enumerate([bsort1_8000, bsort1444_8000]):
     df = df.loc[df['core'] == 0]
-    max[i] = df['cycles'].max()
+    maximum[i] = df['cycles'].max()
+    median[i] = df['cycles'].median()
     boxplot = df.boxplot(column=['cycles'], ax=ax[i], return_type='dict')
     set_boxplot_linewidth(boxplot, linewidth=4)
     
-plt.savefig('/home/caspar/git/RTS-thesis/talks/midterm-20200701/img/bsort8000-boxplot.png', bbox_inches='tight')
-print('The WCET of running 4 cores compared to 1 core is {} times slower'.format(max[1]/max[0]))
+plt.savefig('/home/caspar/git/RTS-thesis/report/img/bsort8000-boxplot.png', bbox_inches='tight')
+
+print(f'Median 1 core is {median[0]}')
+print(f'Median 4 cores is {median[1]}')
+print(f'WCET 1 core is {maximum[0]}')
+print(f'WCET 4 cores is {maximum[1]}')
+
+print('The median of running 4 cores compared to 1 core is {} times slower'.format(median[1]/median[0]))
+print('The WCET of running 4 cores compared to 1 core is {} times slower'.format(maximum[1]/maximum[0]))
 # -
 
 # Calculate the student t-test
