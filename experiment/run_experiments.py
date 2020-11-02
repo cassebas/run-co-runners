@@ -12,7 +12,7 @@ from enum import Enum
 from threading import Thread
 import serial
 import sys
-
+import math
 
 logger = logging.getLogger(__name__)
 click_log.basic_config(logger)
@@ -37,6 +37,7 @@ class Fields(Enum):
     INPUTSIZE_CORE2 = 16
     INPUTSIZE_CORE3 = 17
     DELAY_STEP_COUNTDOWN = 18
+    SYNBENCH_REPEAT = 19
 
 
 class Compile:
@@ -96,7 +97,7 @@ class Compile:
                                  label=None, pmu_cores=None,
                                  no_cache_mgmt=False, enable_mmu=False,
                                  enable_screen=False, inputsizes=None,
-                                 delay_step=None):
+                                 delay_step=None, synbench_repeat=None):
         arg_m4_list = []
         if config_series is not None:
             # The python process that runs m4 cannot handle a string
@@ -132,6 +133,10 @@ class Compile:
             logger.debug('delay_step={}'.format(delay_step))
             delay_step_param = '-Ddelay_step_countdown={}'.format(delay_step)
             arg_m4_list.append(delay_step_param)
+        if synbench_repeat is not None:
+            logger.debug('synbench_repeat={}'.format(synbench_repeat))
+            synbench_repeat_param = '-Dsynbench_repeat={}'.format(synbench_repeat)
+            arg_m4_list.append(synbench_repeat_param)
 
         if inputsizes is not None:
             # if inputsizes is not None, it must be a tuple of four
@@ -405,6 +410,7 @@ flds = {
     Fields.INPUTSIZE_CORE2: 'input size core2',
     Fields.INPUTSIZE_CORE3: 'input size core3',
     Fields.DELAY_STEP_COUNTDOWN: 'delay step countdown',
+    Fields.SYNBENCH_REPEAT: 'synbench repeat',
 }
 
 
@@ -487,6 +493,9 @@ def do_experiments(infile, outfile, workdir_xrtos, workdir_circle,
                           row[flds[Fields.INPUTSIZE_CORE2]],
                           row[flds[Fields.INPUTSIZE_CORE3]])
             delay_step = row[flds[Fields.DELAY_STEP_COUNTDOWN]]
+            synbench_repeat = row[flds[Fields.SYNBENCH_REPEAT]]
+            if math.isnan(synbench_repeat):
+                synbench_repeat = None
 
             # Construct the m4 command for creation of benchmark_config.h
             m4cmd = comp.get_benchmark_config_cmd(config_series=config_series,
@@ -497,7 +506,8 @@ def do_experiments(infile, outfile, workdir_xrtos, workdir_circle,
                                                   enable_mmu=enable_mmu,
                                                   enable_screen=enable_screen,
                                                   inputsizes=inputsizes,
-                                                  delay_step=delay_step)
+                                                  delay_step=delay_step,
+                                                  synbench_repeat=synbench_repeat)
             comp.create_benchmark_config(m4cmd)
 
             # Now we can do the actual compilation and installation
