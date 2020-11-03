@@ -335,7 +335,6 @@ ax.set_xlabel('Number of cores', fontsize=18)
 ax.set_ylabel('Slowdown factor', fontsize=18)
 ax.legend(loc=0, fontsize=14)
 fig.tight_layout()
-plt.savefig('/home/caspar/git/RTS-thesis/talks/midterm-20200701/img/disparity-lineararrayaccess.png')
 
 fig, ax = plt.subplots(1, 1, sharey=True, figsize=(15, 8))
 ax.set_xticks(cores)
@@ -350,7 +349,6 @@ ax.set_xlabel('Number of cores', fontsize=18)
 ax.set_ylabel('Slowdown factor', fontsize=18)
 ax.legend(loc=0, fontsize=14)
 fig.tight_layout()
-plt.savefig('/home/caspar/git/RTS-thesis/talks/midterm-20200701/img/disparity-randomarrayaccess.png')
 
 fig, ax = plt.subplots(1, 1, sharey=True, figsize=(15, 8))
 ax.set_xticks(cores)
@@ -365,7 +363,6 @@ ax.set_xlabel('Number of cores', fontsize=18)
 ax.set_ylabel('Slowdown factor', fontsize=18)
 ax.legend(loc=0, fontsize=14)
 fig.tight_layout()
-plt.savefig('/home/caspar/git/RTS-thesis/talks/midterm-20200701/img/disparity-lineararraywrite.png')
 
 fig, ax = plt.subplots(1, 1, sharey=True, figsize=(15, 8))
 ax.set_xticks(cores)
@@ -379,8 +376,6 @@ ax.plot(disparity192[attacks[3]], label='Random array write, disparity 192x192',
 ax.set_xlabel('Number of cores', fontsize=18)
 ax.set_ylabel('Slowdown factor', fontsize=18)
 ax.legend(loc=0, fontsize=14)
-plt.savefig('disparity-randomarraywrite')
-plt.savefig('/home/caspar/git/RTS-thesis/talks/midterm-20200701/img/disparity-randomarraywrite.png')
 
 mem_sizes = ['32x32', '64x64', '96x96', '128x128', '160x160', '192x192']
 slow_down = []
@@ -430,7 +425,7 @@ def autolabel(ax, bars):
     """Attach a text label above each bar in *rects*, displaying its height."""
     for bar in bars:
         height = bar.get_height()
-        ax.annotate('{:.3}'.format(height),
+        ax.annotate('{:.1f}'.format(height),
                     xy=(bar.get_x() + bar.get_width() / 3, height),
                     xytext=(5, 5),  # 3 points vertical offset
                     textcoords="offset points",
@@ -443,6 +438,7 @@ y_ticks = [1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0]
 width = 0.25
 
 # +
+width = 0.3
 fig, ax = plt.subplots(1, 1, sharey=True, figsize=(15,6))
 slowdown = []
 for i in range(2, 5):
@@ -471,6 +467,7 @@ fig.tight_layout()
 plt.savefig('/home/caspar/git/RTS-thesis/report/img/disparity-lineararrayaccess-bars-pi4.png')
 # -
 
+width = 0.3
 fig, ax = plt.subplots(1, 1, sharey=True, figsize=(15,6))
 slowdown = []
 for i in range(2, 5):
@@ -495,13 +492,13 @@ autolabel(ax, bars1)
 autolabel(ax, bars2)
 autolabel(ax, bars3)
 fig.tight_layout()
-plt.savefig('/home/caspar/git/RTS-thesis/talks/midterm-20200701/img/disparity-randomarrayaccess-bars.png')
 
 mem_sizes = ['32x32', '64x64', '96x96', '128x128', '160x160', '192x192']
 index = np.arange(len(mem_sizes))
 width = 0.3
 
-fig, ax = plt.subplots(1, 1, sharey=True, figsize=(15,7))
+width = 0.3
+fig, ax = plt.subplots(1, 1, sharey=True, figsize=(15,6))
 slowdown = []
 for i in range(2, 5):
     slowdown.append([disparity32.loc[i, attacks[2]],
@@ -551,7 +548,6 @@ autolabel(ax, bars1)
 autolabel(ax, bars2)
 autolabel(ax, bars3)
 fig.tight_layout()
-plt.savefig('/home/caspar/git/RTS-thesis/talks/midterm-20200701/img/disparity-randomarraywrite-bars.png')
 
 mem_sizes = ['32x32', '64x64', '96x96', '128x128', '160x160', '192x192']
 index = np.arange(len(mem_sizes))
@@ -667,9 +663,9 @@ def print_events(events_file):
 events_file = 'report/data/eventsdata-CIRCLE_PI4_BENCH_DISPARITY_CORES1_INPUTSIZE32-cores1-configseries3-configbench1-offset0.csv'
 print_events(events_file)
 
-# ## Disparity with 1 core --- inputsize 96
+# ## Disparity with 1 core --- inputsize 160
 
-events_file = 'report/data/eventsdata-CIRCLE_PI4_BENCH_DISPARITY_CORES1_INPUTSIZE96-cores1-configseries3-configbench1-offset0.csv'
+events_file = 'report/data/eventsdata-CIRCLE_PI4_BENCH_DISPARITY_CORES1_INPUTSIZE160-cores1-configseries3-configbench1-offset0.csv'
 print_events(events_file)
 
 # ## Disparity with 1 core --- inputsize 192
@@ -682,9 +678,9 @@ print_events(events_file)
 events_file = 'report/data/eventsdata-CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK1_INPUTSIZE32-cores4-configseries3111-configbench1222-offset0.csv'
 print_events(events_file)
 
-# ## Disparity with 4 cores --- inputsize 96
+# ## Disparity with 4 cores --- inputsize 160
 
-events_file = 'report/data/eventsdata-CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK1_INPUTSIZE96-cores4-configseries3111-configbench1222-offset0.csv'
+events_file = 'report/data/eventsdata-CIRCLE_PI4_BENCH_DISPARITY_CORES4_64MB_WRITEATTACK1_INPUTSIZE160-cores4-configseries3111-configbench1222-offset0.csv'
 print_events(events_file)
 
 # ## Disparity with 4 cores --- inputsize 192

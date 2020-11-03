@@ -36,7 +36,7 @@ def create_bar_plot(df, title):
     plt.title(title)
 
 
-g = 'report/data/*.csv'
+g = '../../run-co-runners/experiment/report/data/*.csv'
 filenames = glob.glob(g)
 flist = list(set(filenames))
 flist.sort()
@@ -74,6 +74,7 @@ df_slowdown = df_slowdown[df_slowdown['cores'] > 1]
 df_slowdown = df_slowdown.drop(labels=['label1core'], axis=1)
 df_slowdown['slowdown_hi'] = df_slowdown['confidence_hi'] / df_slowdown['mean1core']
 df_slowdown['slowdown_lo'] = df_slowdown['confidence_lo'] / df_slowdown['mean1core']
+df_slowdown['slowdown_error'] = df_slowdown['slowdown'] - df_slowdown['slowdown_lo']
 df_slowdown
 
 # ## Inputsize 32, 4 cores
@@ -331,7 +332,7 @@ ax.set_xlabel('Number of cores', fontsize=18)
 ax.set_ylabel('Slowdown factor', fontsize=18)
 ax.legend(loc=0, fontsize=14)
 fig.tight_layout()
-plt.savefig('/home/caspar/git/RTS-thesis/talks/midterm-20200701/img/disparity-lineararrayaccess.png')
+plt.savefig('/home/caspar/git/RTS-thesis/report/img/disparity-lineararrayaccess.png')
 
 fig, ax = plt.subplots(1, 1, sharey=True, figsize=(15, 8))
 ax.set_xticks(cores)
@@ -346,7 +347,7 @@ ax.set_xlabel('Number of cores', fontsize=18)
 ax.set_ylabel('Slowdown factor', fontsize=18)
 ax.legend(loc=0, fontsize=14)
 fig.tight_layout()
-plt.savefig('/home/caspar/git/RTS-thesis/talks/midterm-20200701/img/disparity-randomarrayaccess.png')
+plt.savefig('/home/caspar/git/RTS-thesis/report/img/disparity-randomarrayaccess.png')
 
 fig, ax = plt.subplots(1, 1, sharey=True, figsize=(15, 8))
 ax.set_xticks(cores)
@@ -361,7 +362,7 @@ ax.set_xlabel('Number of cores', fontsize=18)
 ax.set_ylabel('Slowdown factor', fontsize=18)
 ax.legend(loc=0, fontsize=14)
 fig.tight_layout()
-plt.savefig('/home/caspar/git/RTS-thesis/talks/midterm-20200701/img/disparity-lineararraywrite.png')
+plt.savefig('/home/caspar/git/RTS-thesis/report/img/disparity-lineararraywrite.png')
 
 fig, ax = plt.subplots(1, 1, sharey=True, figsize=(15, 8))
 ax.set_xticks(cores)
@@ -376,7 +377,7 @@ ax.set_xlabel('Number of cores', fontsize=18)
 ax.set_ylabel('Slowdown factor', fontsize=18)
 ax.legend(loc=0, fontsize=14)
 plt.savefig('disparity-randomarraywrite')
-plt.savefig('/home/caspar/git/RTS-thesis/talks/midterm-20200701/img/disparity-randomarraywrite.png')
+plt.savefig('/home/caspar/git/RTS-thesis/report/img/disparity-randomarraywrite.png')
 
 mem_sizes = ['32x32', '64x64', '96x96', '128x128', '160x160', '192x192']
 slow_down = []
@@ -426,7 +427,7 @@ def autolabel(ax, bars):
     """Attach a text label above each bar in *rects*, displaying its height."""
     for bar in bars:
         height = bar.get_height()
-        ax.annotate('{:.3}'.format(height),
+        ax.annotate('{:.1f}'.format(height),
                     xy=(bar.get_x() + bar.get_width() / 3, height),
                     xytext=(5, 5),  # 3 points vertical offset
                     textcoords="offset points",
@@ -489,7 +490,7 @@ autolabel(ax, bars1)
 autolabel(ax, bars2)
 autolabel(ax, bars3)
 fig.tight_layout()
-plt.savefig('/home/caspar/git/RTS-thesis/talks/midterm-20200701/img/disparity-randomarrayaccess-bars.png')
+plt.savefig('/home/caspar/git/RTS-thesis/report/img/disparity-randomarrayaccess-bars.png')
 
 mem_sizes = ['32x32', '64x64', '96x96', '128x128', '160x160', '192x192']
 index = np.arange(len(mem_sizes))
@@ -511,7 +512,7 @@ ax.legend(fontsize=20)
 # ax.set_title('Disparity + Linear array write co-runners', fontsize=28)
 ax.set_xlabel('Input size', fontsize=28)
 ax.set_ylabel('Slowdown factor', fontsize=24)
-ax.set_ylim([1.0, 95.0])
+ax.set_ylim([1.0, 170.0])
 ax.set_xticks(index)
 ax.set_xticklabels(mem_sizes, fontsize=22)
 ax.tick_params(labelrotation=45)
@@ -545,7 +546,7 @@ autolabel(ax, bars1)
 autolabel(ax, bars2)
 autolabel(ax, bars3)
 fig.tight_layout()
-plt.savefig('/home/caspar/git/RTS-thesis/talks/midterm-20200701/img/disparity-randomarraywrite-bars.png')
+plt.savefig('/home/caspar/git/RTS-thesis/report/img/disparity-randomarraywrite-bars.png')
 
 mem_sizes = ['32x32', '64x64', '96x96', '128x128', '160x160', '192x192']
 index = np.arange(len(mem_sizes))
@@ -661,9 +662,9 @@ def print_events(events_file):
 events_file = 'report/data/eventsdata-XRTOS_PI3_BENCH_DISPARITY_CORES1_INPUTSIZE32-cores1-configseries3-configbench1-offset0.csv'
 print_events(events_file)
 
-# ## Disparity with 1 core --- inputsize 96
+# ## Disparity with 1 core --- inputsize 128
 
-events_file = 'report/data/eventsdata-XRTOS_PI3_BENCH_DISPARITY_CORES1_INPUTSIZE96-cores1-configseries3-configbench1-offset0.csv'
+events_file = 'report/data/eventsdata-XRTOS_PI3_BENCH_DISPARITY_CORES1_INPUTSIZE128-cores1-configseries3-configbench1-offset0.csv'
 print_events(events_file)
 
 # ## Disparity with 1 core --- inputsize 192
@@ -676,14 +677,105 @@ print_events(events_file)
 events_file = 'report/data/eventsdata-XRTOS_PI3_BENCH_DISPARITY_CORES4_WRITEATTACK1_INPUTSIZE32-cores4-configseries3111-configbench1222-offset0.csv'
 print_events(events_file)
 
-# ## Disparity with 4 cores --- inputsize 96
+# ## Disparity with 4 cores --- inputsize 128
 
-events_file = 'report/data/eventsdata-XRTOS_PI3_BENCH_DISPARITY_CORES4_WRITEATTACK1_INPUTSIZE96-cores4-configseries3111-configbench1222-offset0.csv'
+events_file = 'report/data/eventsdata-XRTOS_PI3_BENCH_DISPARITY_CORES4_WRITEATTACK1_INPUTSIZE128-cores4-configseries3111-configbench1222-offset0.csv'
 print_events(events_file)
 
 # ## Disparity with 4 cores --- inputsize 192
 
 events_file = 'report/data/eventsdata-XRTOS_PI3_BENCH_DISPARITY_CORES4_WRITEATTACK1_INPUTSIZE192-cores4-configseries3111-configbench1222-offset0.csv'
 print_events(events_file)
+
+# # Boxplots
+
+f = '../../run-co-runners-tmp/experiment/report/data/cyclesdata-XRTOS_PI3_BENCH_DISPARITY_CORES4_WRITEATTACK1_INPUTSIZE32-cores4-configseries3111-configbench1222-offset0.csv'
+df = pd.read_csv(f, sep=' ')
+fig, ax = plt.subplots(1, 4, sharey=True, figsize=(15,5))
+for core in range(4):
+    dfcore = df[df['core'] == core]
+    ax[core].set_xlabel(f'core {core}', fontsize=20)
+    boxplot = dfcore.boxplot(column=['cycles'], ax=ax[core])
+
+
+f = '../../run-co-runners-tmp/experiment/report/data/cyclesdata-XRTOS_PI3_BENCH_DISPARITY_CORES4_WRITEATTACK1_INPUTSIZE64-cores4-configseries3111-configbench1222-offset0.csv'
+df = pd.read_csv(f, sep=' ')
+fig, ax = plt.subplots(1, 4, sharey=True, figsize=(15,5))
+for core in range(4):
+    dfcore = df[df['core'] == core]
+    ax[core].set_xlabel(f'core {core}', fontsize=20)
+    boxplot = dfcore.boxplot(column=['cycles'], ax=ax[core])
+
+
+f = '../../run-co-runners-tmp/experiment/report/data/cyclesdata-XRTOS_PI3_BENCH_DISPARITY_CORES4_WRITEATTACK1_INPUTSIZE96-cores4-configseries3111-configbench1222-offset0.csv'
+df = pd.read_csv(f, sep=' ')
+fig, ax = plt.subplots(1, 4, sharey=True, figsize=(15,5))
+for core in range(4):
+    dfcore = df[df['core'] == core]
+    ax[core].set_xlabel(f'core {core}', fontsize=20)
+    boxplot = dfcore.boxplot(column=['cycles'], ax=ax[core])
+
+
+f = '../../run-co-runners-tmp/experiment/report/data/cyclesdata-XRTOS_PI3_BENCH_DISPARITY_CORES4_WRITEATTACK1_INPUTSIZE128-cores4-configseries3111-configbench1222-offset0.csv'
+df = pd.read_csv(f, sep=' ')
+fig, ax = plt.subplots(1, 4, sharey=True, figsize=(15,5))
+for core in range(4):
+    dfcore = df[df['core'] == core]
+    ax[core].set_xlabel(f'core {core}', fontsize=20)
+    boxplot = dfcore.boxplot(column=['cycles'], ax=ax[core])
+
+
+f = '../../run-co-runners-tmp/experiment/report/data/cyclesdata-XRTOS_PI3_BENCH_DISPARITY_CORES4_WRITEATTACK1_INPUTSIZE160-cores4-configseries3111-configbench1222-offset0.csv'
+df = pd.read_csv(f, sep=' ')
+fig, ax = plt.subplots(1, 4, sharey=True, figsize=(15,5))
+for core in range(4):
+    dfcore = df[df['core'] == core]
+    ax[core].set_xlabel(f'core {core}', fontsize=20)
+    boxplot = dfcore.boxplot(column=['cycles'], ax=ax[core])
+
+
+f = '../../run-co-runners-tmp/experiment/report/data/cyclesdata-XRTOS_PI3_BENCH_DISPARITY_CORES4_WRITEATTACK1_INPUTSIZE193-cores4-configseries3111-configbench1222-offset0.csv'
+df = pd.read_csv(f, sep=' ')
+fig, ax = plt.subplots(1, 4, sharey=True, figsize=(15,5))
+for core in range(4):
+    dfcore = df[df['core'] == core]
+    ax[core].set_xlabel(f'core {core}', fontsize=20)
+    boxplot = dfcore.boxplot(column=['cycles'], ax=ax[core])
+
+
+f = '../../run-co-runners-tmp/experiment/report/data/cyclesdata-XRTOS_PI3_BENCH_DISPARITY_CORES4_WRITEATTACK1_INPUTSIZE224-cores4-configseries3111-configbench1222-offset0.csv'
+df = pd.read_csv(f, sep=' ')
+fig, ax = plt.subplots(1, 4, sharey=True, figsize=(15,5))
+for core in range(4):
+    dfcore = df[df['core'] == core]
+    ax[core].set_xlabel(f'core {core}', fontsize=20)
+    boxplot = dfcore.boxplot(column=['cycles'], ax=ax[core])
+
+
+# +
+f='../../run-co-runners-tmp/experiment/slowdown-factors-sdvbs-disparity_pi3-20201102.csv'
+df = pd.read_csv(f, sep=' ')
+# Show overview of the experiments with one label
+df = df[df['cores'] == 4]
+df = df[df['offset'] == 0]
+
+# Drop one of the labels, for 1 core both labels are the same
+df = df.drop(labels=['cores', 'label1core', 'offset'], axis=1)
+df = df.sort_values(by=['inputsize'])
+
+inputsizes = [32, 64, 96, 128, 132, 136, 140, 160, 192, 193, 196, 200, 224, 256]
+
+fig, ax = plt.subplots(1, 1, sharey=True, figsize=(15, 8))
+ax2 = ax.twinx()
+ax.set_xticks(df['inputsize'])
+ax2.set_xticks(df['inputsize'])
+ax2.plot(df['inputsize'], df['mean1core'], label='Disparity single core', marker='v', color='blue')
+ax.plot(df['inputsize'], df['slowdown_wcet'], label='Linear array write slowdown', marker='o', color='green')
+ax.set_title('Disparity + linear array --- varying input size', fontsize=20)
+ax.set_xlabel('Input size', fontsize=18)
+ax.set_ylabel('Slowdown factor', fontsize=18)
+fig.tight_layout()
+df
+# -
 
 
